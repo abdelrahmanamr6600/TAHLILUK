@@ -266,20 +266,39 @@ class SupportFunctions : AppCompatActivity() {
             }
         }
 
-        fun showDialog(activity: LabsActivity) {
+        fun showDialog(activity: LabsActivity, state: Boolean) {
             AlertDialog.Builder(activity)
                 .setTitle("Location")
                 .setMessage("Unable to get your Location. \nCheck your Internet connection and GPS signal then try again.")
                 .setPositiveButton(
                     "Retry"
                 ) { _, _ ->
-                    activity.reloadRecyclerView()
+                    when (state) {
+                        true -> {
+                            activity.reloadRecyclerView(true)
+                        }
+                        false -> {
+                            activity.clickOnMapShow()
+                        }
+                    }
+
                 }
                 .setNegativeButton(
                     "Cancel", null
                 )
                 .setIcon(R.drawable.ic_show_on_map)
                 .show()
+        }
+
+        fun showSwitcher(state: Boolean, switchView: View) {
+            when (state) {
+                true -> {
+                    switchView.visibility = View.VISIBLE
+                }
+                false -> {
+                    switchView.visibility = View.GONE
+                }
+            }
         }
     }
 

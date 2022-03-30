@@ -17,7 +17,7 @@ import kotlinx.coroutines.*
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
     private var parentJob = Job()
-
+    private val coroutineScope = CoroutineScope(Dispatchers.Main + parentJob)
     private lateinit var binding: ActivitySplashScreenBinding
     private lateinit var preferenceManager: PreferenceManager
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,8 +26,6 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(binding.root)
         preferenceManager = PreferenceManager(applicationContext)
 
-
-        val coroutineScope = CoroutineScope(Dispatchers.Main + parentJob)
 
         coroutineScope.launch {
             setAnimation()
@@ -43,7 +41,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
     }
 
-    private suspend fun setDarkModeState() {
+    private fun setDarkModeState() {
         val darkModeState = preferenceManager.getString(Constants.KEY_DARK_MODE_STATE)
         if (darkModeState == Constants.KEY_DARK_MODE) {
             SupportFunctions.startNightMode()
@@ -53,7 +51,7 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     // Animation
-    private suspend fun setAnimation() {
+    private fun setAnimation() {
         val appName: Animation = AnimationUtils.loadAnimation(this, R.anim.app_name)
         val description: Animation = AnimationUtils.loadAnimation(this, R.anim.description)
         binding.tvDescription.startAnimation(description)
@@ -63,7 +61,7 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     //Start Next Activity AfterSplashScreen
-    private suspend fun moveToSignIn() {
+    private fun moveToSignIn() {
         if (preferenceManager.getBoolean(Constants.KEY_IS_SIGNED_IN)) {
             startMainActivity()
         } else {
@@ -72,14 +70,14 @@ class SplashScreenActivity : AppCompatActivity() {
         finish()
     }
 
-    private suspend fun startMainActivity() {
+    private fun startMainActivity() {
         val intent = Intent(this, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
         startActivity(intent)
 
     }
 
-    private suspend fun startSignInActivity() {
+    private fun startSignInActivity() {
         val intent = Intent(this, SignInActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
         startActivity(intent)

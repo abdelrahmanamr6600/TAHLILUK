@@ -23,6 +23,8 @@ import java.util.*
 
 class LabsActivity : AppCompatActivity(), LabListener {
     lateinit var activityLabsBinding: ActivityLabsBinding
+    private var parentJob = Job()
+    private val coroutineScope = CoroutineScope(Dispatchers.IO + parentJob)
     private lateinit var labsListAdapter: LabsInfoAdapter
     private var labsList: ArrayList<Lab> = ArrayList()
     private lateinit var searchView: SearchView
@@ -64,6 +66,7 @@ class LabsActivity : AppCompatActivity(), LabListener {
                             labsListAdapter.currentLatLong!!.longitude
                         )
                         startActivity(intent)
+
                     } else {
                         if (ActivityCompat.checkSelfPermission(
                                 applicationContext,
@@ -84,21 +87,36 @@ class LabsActivity : AppCompatActivity(), LabListener {
                             SupportFunctions.turnOnGps(this)
 
                         } else {
-                            reloadRecyclerView2()
-                            //activityLabsBinding.rbMap.performClick()
-                            GlobalScope.launch(Dispatchers.IO) {
-                                delay(2000)
-                                withContext(Dispatchers.Main) {
-                                    activityLabsBinding.rbList.performClick()
-                                    activityLabsBinding.rbMap.performClick()
+
+                            try {
+                                if (count != 3) {
+                                    SupportFunctions.showSwitcher(
+                                        false,
+                                        activityLabsBinding.rg
+                                    )
+                                    reloadRecyclerView(false)
+                                    count += 1
+                                    coroutineScope.launch {
+                                        delay(2000)
+                                        withContext(Dispatchers.Main) {
+                                            activityLabsBinding.rbList.performClick()
+                                            activityLabsBinding.rbMap.performClick()
+                                        }
+                                    }
+                                } else {
+                                    SupportFunctions.showSwitcher(
+                                        true,
+                                        activityLabsBinding.rg
+                                    )
+                                    SupportFunctions.showDialog(this, false)
+                                    count = 0
                                 }
+                            } catch (ex: Exception) {
                             }
                         }
                     }
-
                 }
             }
-
         }
     }
 
@@ -163,22 +181,26 @@ class LabsActivity : AppCompatActivity(), LabListener {
     }
 
 
-    fun reloadRecyclerView() {
-        labsListAdapter = LabsInfoAdapter(this, labsList, this, true)
+    fun reloadRecyclerView(State: Boolean) {
+        labsListAdapter = LabsInfoAdapter(this, labsList, this, State)
         activityLabsBinding.userRecyclerView.adapter = labsListAdapter
     }
 
-    private fun reloadRecyclerView2() {
-        labsListAdapter = LabsInfoAdapter(this, labsList, this, false)
-        activityLabsBinding.userRecyclerView.adapter = labsListAdapter
+    fun clickOnMapShow() {
+        activityLabsBinding.rbList.performClick()
+        activityLabsBinding.rbMap.performClick()
     }
 
     override fun onResume() {
         super.onResume()
+        SupportFunctions.loading(true, null, activityLabsBinding.progressBar)
         getLabsFromFireStore()
         activityLabsBinding.rbList.isChecked = true
-        SupportFunctions.loading(false, null, activityLabsBinding.progressBar)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        parentJob.cancel()
+    }
 
 }

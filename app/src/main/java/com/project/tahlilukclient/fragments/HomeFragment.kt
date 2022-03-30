@@ -75,7 +75,6 @@ class HomeFragment : Fragment() {
         }
     }
 
-
     private fun startLabsActivity() {
         if (SupportFunctions.checkForInternet(requireContext())) {
             val intent = Intent(view?.context, LabsActivity::class.java)

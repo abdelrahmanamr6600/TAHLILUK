@@ -27,13 +27,14 @@ import com.project.tahlilukclient.databinding.ItemContainerLabCardBinding
 
 class LabsInfoAdapter(
     var activity: LabsActivity,
-    var labs: ArrayList<Lab>,
+    private var labs: ArrayList<Lab>,
     var labListener: LabListener,
-    private var state: Boolean
+    var state: Boolean
 ) :
     RecyclerView.Adapter<LabsInfoAdapter.LabViewHolder>() {
+    private val coroutineScope = CoroutineScope(Dispatchers.IO)
     var currentLatLong: LatLng? = null
-    var mapState = false
+    private var mapState = false
 
 
     init {
@@ -53,7 +54,7 @@ class LabsInfoAdapter(
             == PackageManager.PERMISSION_GRANTED && SupportFunctions.isGpsEnabled(activity)
         ) {
 
-            GlobalScope.launch(Dispatchers.IO) {
+            coroutineScope.launch {
                 getCurrentLocation()
             }
         }
@@ -74,13 +75,13 @@ class LabsInfoAdapter(
                 labListener.onLabClicked(lab)
             }
             binding.ivOpenMap.setOnClickListener {
+                SupportFunctions.showSwitcher(false, activity.activityLabsBinding.rg)
                 openMap(lab)
+
             }
 
             reTouchAfterDelay(binding)
-
         }
-
     }
 
     private fun getLabImage(encodedImage: String): Bitmap {
@@ -175,17 +176,18 @@ class LabsInfoAdapter(
             SupportFunctions.turnOnGps(activity)
 
         } else {
-
             if (currentLatLong != null) {
                 goToMap(lab)
+                SupportFunctions.showSwitcher(true, activity.activityLabsBinding.rg)
             } else {
                 try {
                     activity.count = if (activity.count != 3) {
-                        activity.reloadRecyclerView()
+                        activity.reloadRecyclerView(true)
                         activity.count.plus(1)
                     } else {
-                        SupportFunctions.showDialog(activity)
-                        1
+                        SupportFunctions.showSwitcher(true, activity.activityLabsBinding.rg)
+                        SupportFunctions.showDialog(activity,true)
+                        0
                     }
                 } catch (ex: Exception) {
                 }
@@ -195,7 +197,8 @@ class LabsInfoAdapter(
 
     private fun reTouchAfterDelay(binding: ItemContainerLabCardBinding) {
         if (mapState) {
-            GlobalScope.launch(Dispatchers.IO) {
+            SupportFunctions.showSwitcher(false, activity.activityLabsBinding.rg)
+            coroutineScope.launch {
                 delay(2000)
                 withContext(Dispatchers.Main) {
                     binding.ivOpenMap.performClick()
@@ -204,6 +207,5 @@ class LabsInfoAdapter(
             mapState = false
         }
     }
-
 
 }
