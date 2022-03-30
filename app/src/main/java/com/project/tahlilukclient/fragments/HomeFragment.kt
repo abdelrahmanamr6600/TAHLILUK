@@ -60,7 +60,6 @@ class HomeFragment : Fragment() {
         }
 
         fragmentHomeBinding.cvReserve.setOnClickListener {
-            startReserveActivity()
         }
         fragmentHomeBinding.cvLabs.setOnClickListener {
             startLabsActivity()
@@ -76,14 +75,6 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun startReserveActivity() {
-        if (SupportFunctions.checkForInternet(requireContext())) {
-            val intent = Intent(view?.context, MapActivity::class.java)
-            startActivity(intent)
-        } else {
-            SupportFunctions.showNoInternetSnackBar(fragmentHomeBinding)
-        }
-    }
 
     private fun startLabsActivity() {
         if (SupportFunctions.checkForInternet(requireContext())) {
