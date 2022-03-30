@@ -194,8 +194,11 @@ class LabsActivity : AppCompatActivity(), LabListener {
     override fun onResume() {
         super.onResume()
         SupportFunctions.loading(true, null, activityLabsBinding.progressBar)
-        getLabsFromFireStore()
+        SupportFunctions.showSwitcher(true, activityLabsBinding.rg)
         activityLabsBinding.rbList.isChecked = true
+        getLabsFromFireStore()
+
+
     }
 
     override fun onDestroy() {

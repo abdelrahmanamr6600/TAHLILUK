@@ -75,9 +75,7 @@ class LabsInfoAdapter(
                 labListener.onLabClicked(lab)
             }
             binding.ivOpenMap.setOnClickListener {
-                SupportFunctions.showSwitcher(false, activity.activityLabsBinding.rg)
                 openMap(lab)
-
             }
 
             reTouchAfterDelay(binding)
@@ -177,8 +175,8 @@ class LabsInfoAdapter(
 
         } else {
             if (currentLatLong != null) {
+                SupportFunctions.showSwitcher(false, activity.activityLabsBinding.rg)
                 goToMap(lab)
-                SupportFunctions.showSwitcher(true, activity.activityLabsBinding.rg)
             } else {
                 try {
                     activity.count = if (activity.count != 3) {
