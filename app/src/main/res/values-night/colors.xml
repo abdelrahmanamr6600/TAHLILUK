@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#8568FE</color>
+    <color name="primary_dark">#FFFFFFFF</color>
+    <color name="primary_text">#8568FE</color>
+    <color name="secondary_text">#FFFFFFFF</color>
+    <color name="phone_text">#818181</color>
+    <color name="third_text">#C8C8C8</color>
+    <color name="fourth_text">#0D3737</color>
+    <color name="input_background">#ECECEC</color>
+    <color name="shadow">#000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_background">#212121</color>
+    <color name="input_white">#212121</color>
+    <color name="black">#FFFFFFFF</color>
+    <color name="black_text">#000000</color>
+    <color name="error">#B00020</color>
+    <color name="code_input_underline_selected_color">#9e1ace</color>
+    <color name="count_background_color">#ff6f00</color>
+    <color name="icon_background">#20FFFFFF</color>
+    <color name="background">#212121</color>
+    <color name="background_item_blur">#B3FFFFFF</color>
+    <color name="green">#008000</color>
+    <color name="received_message_background">#0E1323</color>
+    <color name="radiobuttonColor">#989898</color>
+    <color name="btnDisabledColor">#33FBF6F6</color>
+
+
+</resources>
