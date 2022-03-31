@@ -97,7 +97,8 @@ dependencies {
 
     // draw direction om map
     implementation 'com.github.jd-alexander:library:1.1.0'
-
+    //stepView
+    implementation 'com.anton46:stepsview:0.0.2'
     //coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
 

@@ -9,6 +9,7 @@ class Lab : Serializable {
     var address: String? = null
     var phone: String? = null
     var labLatitude : String?=null
+    var Analytics: ArrayList<Analytics>? = null
     var labLongitude:String?= name
     var token: String? = null
     var id: String? = null

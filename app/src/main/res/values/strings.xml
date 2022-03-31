@@ -78,6 +78,7 @@
     <string name="show_on_map">show on map</string>
     <string name="open_chat">chat</string>
     <string name="search_labs">search in Labs...</string>
+    <string name="search_analytics">serarch in Analytics</string>
     <string name="list">List</string>
     <string name="map">Map</string>
 

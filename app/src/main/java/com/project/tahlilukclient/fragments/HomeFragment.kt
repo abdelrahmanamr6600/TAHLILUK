@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import com.project.tahlilukclient.activities.MainChatActivity
 import com.project.tahlilukclient.activities.MapActivity
 import com.project.tahlilukclient.activities.LabsActivity
+import com.project.tahlilukclient.activities.ReserveActivity
 import com.project.tahlilukclient.databinding.FragmentHomeBinding
 import com.project.tahlilukclient.utilities.Constants
 import com.project.tahlilukclient.utilities.PreferenceManager
@@ -64,6 +65,9 @@ class HomeFragment : Fragment() {
         fragmentHomeBinding.cvLabs.setOnClickListener {
             startLabsActivity()
         }
+        fragmentHomeBinding.cvReserve.setOnClickListener {
+            startReserveActivity()
+        }
     }
 
     private fun startMainChatActivity() {
@@ -80,6 +84,17 @@ class HomeFragment : Fragment() {
             val intent = Intent(view?.context, LabsActivity::class.java)
             startActivity(intent)
         } else {
+            SupportFunctions.showNoInternetSnackBar(fragmentHomeBinding)
+        }
+    }
+
+    private fun startReserveActivity() {
+        if (SupportFunctions.checkForInternet(requireContext()))  {
+            val intent = Intent(requireContext(), ReserveActivity::class.java)
+            startActivity(intent)
+        }
+        else
+        {
             SupportFunctions.showNoInternetSnackBar(fragmentHomeBinding)
         }
     }

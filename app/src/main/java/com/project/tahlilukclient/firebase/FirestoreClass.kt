@@ -11,7 +11,9 @@ import com.project.tahlilukclient.activities.*
 import com.project.tahlilukclient.fragments.ChangePasswordFragment
 import com.project.tahlilukclient.fragments.ChangePhoneFragment
 import com.project.tahlilukclient.fragments.ProfileFragment
+import com.project.tahlilukclient.fragments.ReserveLabsFragment
 import com.project.tahlilukclient.models.Lab
+import com.project.tahlilukclient.utilities.Constants
 import java.util.*
 import kotlin.collections.HashMap
 
@@ -467,6 +469,36 @@ class FirestoreClass {
                     }
                     is LabsChatActivity -> {
                         activity.closeProgressBar()
+                    }
+                }
+            }
+    }
+
+
+    fun getLabs(fragment: Fragment){
+        //getLabsList FromFireStore
+        mFireStore.collection(Constants.Key_COLLECTION_LABS)
+            .get().addOnSuccessListener { document ->
+                val labsList:ArrayList<Lab> =ArrayList()
+                for (labObject in document.documents){
+                    //convert every documents to object that type lab and pass it to List
+                    val lab = labObject.toObject(Lab::class.java)
+                    if (lab != null) {
+                        lab.id = labObject.id
+                        labsList.add(lab)
+                    }
+                }
+
+                when(fragment){
+                    is ReserveLabsFragment ->{
+                        fragment.successLabFromFireStore(labsList)
+                    }
+                }
+            }
+            .addOnFailureListener {
+                when(fragment){
+                    is ReserveLabsFragment ->{
+                        fragment.closeProgressBar()
                     }
                 }
             }

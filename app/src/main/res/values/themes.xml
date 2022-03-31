@@ -47,5 +47,9 @@
         <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
     </style>
 
-
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:editTextColor">@color/primary</item>
+        <item name="android:textColorHint">@color/primary</item>
+    </style>
 </resources>
