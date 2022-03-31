@@ -46,16 +46,16 @@
 
         <activity
             android:name=".activities.LabsActivity"
-<<<<<<< Updated upstream
+
             android:exported="false"
             android:screenOrientation="portrait" />
-=======
+
             android:exported="false" />
         <activity
             android:name=".activities.ReserveActivity"
             android:windowSoftInputMode="adjustResize"
             android:exported="false" />
->>>>>>> Stashed changes
+
 
         <activity
             android:name=".activities.MapActivity"
