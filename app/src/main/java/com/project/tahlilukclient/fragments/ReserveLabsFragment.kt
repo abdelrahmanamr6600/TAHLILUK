@@ -11,11 +11,11 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.project.tahlilukclient.listeners.IChangeDot
 import com.project.tahlilukclient.R
 import com.project.tahlilukclient.adapters.ReserveLabsAdapter
 import com.project.tahlilukclient.databinding.FragmentReserveLabsBinding
 import com.project.tahlilukclient.firebase.FirestoreClass
+import com.project.tahlilukclient.listeners.ChangeStepView
 import com.project.tahlilukclient.listeners.LabListener
 import com.project.tahlilukclient.models.Lab
 import com.project.tahlilukclient.utilities.SupportFunctions
@@ -29,7 +29,7 @@ class ReserveLabsFragment : Fragment(),LabListener {
     private var filteredLabList: ArrayList<Lab> = ArrayList()
     private lateinit var labsList: ArrayList<Lab>
     private lateinit var searchView: SearchView
-    private lateinit var interfacee: IChangeDot
+    private lateinit var changeStepView: ChangeStepView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,11 +58,11 @@ class ReserveLabsFragment : Fragment(),LabListener {
 
     companion object {
 
-        fun newInstance(listener: IChangeDot) =
+        fun newInstance(listener: ChangeStepView) =
             ReserveLabsFragment().apply {
                 arguments = Bundle().apply {
                 }
-                interfacee=listener
+                changeStepView=listener
             }
     }
 
@@ -126,7 +126,7 @@ class ReserveLabsFragment : Fragment(),LabListener {
     }
 
     override fun onLabClicked(lab: Lab) {
-        interfacee.change()
+        changeStepView.changePosition()
 
         val requestReserveAnalyticsFragment =RequestReserveAnalyticsFragment()
         val bundle = Bundle()

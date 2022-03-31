@@ -3,12 +3,13 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.project.tahlilukclient.listeners.IChangeDot
 import com.project.tahlilukclient.R
 import com.project.tahlilukclient.databinding.ActivityReserveBinding
 import com.project.tahlilukclient.fragments.ReserveLabsFragment
+import com.project.tahlilukclient.listeners.ChangeStepView
+
 class ReserveActivity : AppCompatActivity(),
-    IChangeDot {
+    ChangeStepView {
     private var reserveBinding: ActivityReserveBinding? = null
     private lateinit var list: Array<String>
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,9 +32,8 @@ class ReserveActivity : AppCompatActivity(),
         fragmentTransaction.addToBackStack(null)
         fragmentTransaction.commit()
     }
-    override fun change() {
 
+    override fun changePosition() {
         reserveBinding!!.stepView.setCompletedPosition(1).drawView()
-
     }
 }
