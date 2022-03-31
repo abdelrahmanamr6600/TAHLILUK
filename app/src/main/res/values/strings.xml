@@ -73,14 +73,17 @@
     <string name="enter_confirm_password">Enter confirm password</string>
     <string name="can_not_update_information">Can\'t update information</string>
     <string name="unable_to_sign_out">Unable to sign out</string>
-    <string name="openMap" translatable="false">open map</string>
-    <string name="req_reserve">request reserve</string>
-    <string name="show_on_map">show on map</string>
-    <string name="open_chat">chat</string>
+    <string name="openMap">Open map</string>
+    <string name="show_on_map">Show on map</string>
+    <string name="open_chat">Chat</string>
     <string name="search_labs">search in Labs...</string>
-    <string name="search_analytics">serarch in Analytics</string>
+    <string name="search_analytics">Search in Analytics</string>
     <string name="list">List</string>
     <string name="map">Map</string>
+    <string name="location">Location</string>
+    <string name="location_error_message">Unable to get your Location. \nCheck your Internet connection and GPS signal then try again.</string>
+    <string name="retry">Retry</string>
+    <string name="cancel">Cancel</string>
 
 
 </resources>

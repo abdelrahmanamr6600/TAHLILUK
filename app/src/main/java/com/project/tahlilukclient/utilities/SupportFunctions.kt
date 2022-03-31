@@ -268,10 +268,10 @@ class SupportFunctions : AppCompatActivity() {
 
         fun showDialog(activity: LabsActivity, state: Boolean) {
             AlertDialog.Builder(activity)
-                .setTitle("Location")
-                .setMessage("Unable to get your Location. \nCheck your Internet connection and GPS signal then try again.")
+                .setTitle(activity.resources.getString(R.string.location))
+                .setMessage(activity.resources.getString(R.string.location_error_message))
                 .setPositiveButton(
-                    "Retry"
+                    activity.resources.getString(R.string.retry)
                 ) { _, _ ->
                     when (state) {
                         true -> {
@@ -284,7 +284,7 @@ class SupportFunctions : AppCompatActivity() {
 
                 }
                 .setNegativeButton(
-                    "Cancel", null
+                    activity.resources.getString(R.string.cancel), null
                 )
                 .setIcon(R.drawable.ic_show_on_map)
                 .show()

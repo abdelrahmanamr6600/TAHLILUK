@@ -74,12 +74,15 @@
     <string name="enter_confirm_password">أدخل تأكيد كلمة المرور</string>
     <string name="can_not_update_information">حدث خطأ اثناء تحديث المعلومات</string>
     <string name="unable_to_sign_out">غير قادر على تسجيل الخروج</string>
+    <string name="openMap">عرض على الخريطة</string>
     <string name="show_on_map">مشاهدة علي الخريطة</string>
-    <string name="req_reserve">طلب زيارة منزلية</string>
-    <string name="open_chat">فتح محادثة</string>
+    <string name="open_chat">بدأ محادثة</string>
     <string name="search_labs">بحث في المعامل</string>
     <string name="search_analytics">بحث في التحاليل</string>
     <string name="list">قائمة</string>
     <string name="map">خريطة</string>
-
+    <string name="location">الموقع</string>
+    <string name="location_error_message">لا يمكن الوصول الى الموقع. \nقم بالتحقق من الانترنت وخدمات الوصول للموقع.</string>
+    <string name="retry">إعادة المحاولة</string>
+    <string name="cancel">إلغاء</string>
 </resources>
