@@ -46,16 +46,14 @@
 
         <activity
             android:name=".activities.LabsActivity"
-
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
 
-            android:exported="false" />
         <activity
             android:name=".activities.ReserveActivity"
-            android:windowSoftInputMode="adjustResize"
-            android:exported="false" />
-
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name=".activities.MapActivity"
