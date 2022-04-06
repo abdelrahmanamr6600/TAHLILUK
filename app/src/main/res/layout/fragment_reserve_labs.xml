@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8EAF1"
+    android:background="@drawable/background_content_bottom"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.ReserveLabsFragment">
-    <SearchView
+    <android.widget.SearchView
         android:theme="@style/SearchViewStyle"
         android:id="@+id/search_view"
         android:layout_width="wrap_content"

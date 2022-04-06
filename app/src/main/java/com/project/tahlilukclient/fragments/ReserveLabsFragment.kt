@@ -1,5 +1,5 @@
 package com.project.tahlilukclient.fragments
-
+import android.animation.LayoutTransition
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -45,6 +45,7 @@ class ReserveLabsFragment : Fragment(),LabListener {
         savedInstanceState: Bundle?
     ): View {
         getLabsFromFireStore()
+
         reserveLabsBinding = FragmentReserveLabsBinding.inflate(layoutInflater)
         return reserveLabsBinding.root
 
@@ -55,9 +56,7 @@ class ReserveLabsFragment : Fragment(),LabListener {
         searchOnLabs()
 
     }
-
     companion object {
-
         fun newInstance(listener: ChangeStepView) =
             ReserveLabsFragment().apply {
                 arguments = Bundle().apply {
@@ -66,10 +65,9 @@ class ReserveLabsFragment : Fragment(),LabListener {
             }
     }
 
-
-
     private fun searchOnLabs(){
          searchView = reserveLabsBinding.searchView
+        searchView.layoutTransition = LayoutTransition()
 
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
@@ -126,18 +124,26 @@ class ReserveLabsFragment : Fragment(),LabListener {
     }
 
     override fun onLabClicked(lab: Lab) {
-        changeStepView.changePosition()
-
-        val requestReserveAnalyticsFragment =RequestReserveAnalyticsFragment()
-        val bundle = Bundle()
-        bundle.putSerializable("lab",lab)
-        requestReserveAnalyticsFragment.arguments = bundle
-        val fragmentManager: FragmentManager =
-            (reserveLabsBinding.root.context as FragmentActivity).supportFragmentManager
-        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_container, requestReserveAnalyticsFragment)
-        fragmentTransaction.addToBackStack(null)
-        fragmentTransaction.commit()
+            changeStepView.increaseProgress()
+            val requestReserveAnalyticsFragment =RequestReserveAnalyticsFragment.newInstance(changeStepView)
+            val bundle = Bundle()
+            bundle.putSerializable("lab",lab)
+            requestReserveAnalyticsFragment.arguments = bundle
+            val fragmentManager: FragmentManager =
+                (reserveLabsBinding.root.context as FragmentActivity).supportFragmentManager
+            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.fragment_container, requestReserveAnalyticsFragment)
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
 
     }
+
+    override fun onResume() {
+        changeStepView.progressDecrease()
+        super.onResume()
+    }
+
+
+
+
 }

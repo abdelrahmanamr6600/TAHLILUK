@@ -3,10 +3,10 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#E8EAF1"
+        android:background="@drawable/background_content_bottom"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:context=".fragments.RequestReserveAnalyticsFragment">
-        <SearchView
+        <android.widget.SearchView
             android:theme="@style/SearchViewStyle"
             android:id="@+id/search_view"
             android:layout_width="wrap_content"
@@ -39,5 +39,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_save_analytics"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:text="@string/save"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20sdp"
+        android:fontFamily="@font/ntailub"
+        android:visibility="gone"
+        android:background="@drawable/button_sheet_button"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="@dimen/_20sdp"/>
 
-    </FrameLayout>
+
+</FrameLayout>

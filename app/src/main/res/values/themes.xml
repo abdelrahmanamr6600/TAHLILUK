@@ -51,5 +51,6 @@
         <item name="android:textColor">@color/primary</item>
         <item name="android:editTextColor">@color/primary</item>
         <item name="android:textColorHint">@color/primary</item>
+
     </style>
 </resources>

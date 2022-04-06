@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:clickable="true"
@@ -15,10 +16,26 @@
     app:cardElevation="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/background"
         android:padding="@dimen/_8sdp">
+
+        <CheckBox
+            android:id="@+id/iv_selected"
+            android:layout_width="48dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="41dp"
+            android:checked="false"
+            android:enabled="false"
+            android:buttonTint="@color/primary"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/textAnalysisName"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/iv_analysisImage"
@@ -44,7 +61,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_8sdp"
-            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_60sdp"
             android:ellipsize="end"
             android:maxLines="1"
             android:fontFamily="@font/ntailub"
@@ -59,7 +76,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_8sdp"
-            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_100sdp"
             android:ellipsize="end"
             android:maxLines="1"
             android:textColor="@color/secondary_text"

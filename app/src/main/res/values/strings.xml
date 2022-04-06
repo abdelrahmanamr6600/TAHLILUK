@@ -84,6 +84,7 @@
     <string name="location_error_message">Unable to get your Location. \nCheck your Internet connection and GPS signal then try again.</string>
     <string name="retry">Retry</string>
     <string name="cancel">Cancel</string>
+    <string name="no_analytics_found">No Analytics have been added yet</string>
 
 
 </resources>
