@@ -65,8 +65,8 @@ class LabsActivity : AppCompatActivity(), LabListener {
                             Constants.KEY_CURRENT_LONGITUDE,
                             labsListAdapter.currentLatLong!!.longitude
                         )
+                        count = 0
                         startActivity(intent)
-
                     } else {
                         if (ActivityCompat.checkSelfPermission(
                                 applicationContext,
@@ -85,9 +85,7 @@ class LabsActivity : AppCompatActivity(), LabListener {
                             SupportFunctions.getPermission(this)
                         } else if (!SupportFunctions.isGpsEnabled(this)) {
                             SupportFunctions.turnOnGps(this)
-
                         } else {
-
                             try {
                                 if (count != 3) {
                                     SupportFunctions.showSwitcher(
