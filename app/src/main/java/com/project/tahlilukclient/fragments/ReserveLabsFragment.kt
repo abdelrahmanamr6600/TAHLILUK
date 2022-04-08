@@ -139,7 +139,7 @@ class ReserveLabsFragment : Fragment(),LabListener {
     }
 
     override fun onResume() {
-        changeStepView.progressDecrease()
+
         super.onResume()
     }
 

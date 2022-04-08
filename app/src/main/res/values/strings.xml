@@ -85,6 +85,8 @@
     <string name="retry">Retry</string>
     <string name="cancel">Cancel</string>
     <string name="no_analytics_found">No Analytics have been added yet</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

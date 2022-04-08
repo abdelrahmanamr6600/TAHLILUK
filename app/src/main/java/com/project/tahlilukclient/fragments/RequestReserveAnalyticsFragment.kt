@@ -1,13 +1,18 @@
 package com.project.tahlilukclient.fragments
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.project.tahlilukclient.R
 import com.project.tahlilukclient.adapters.AnalyticsAdapter
 import com.project.tahlilukclient.databinding.FragmentAnalyticsRequestReserveBinding
 import com.project.tahlilukclient.listeners.AnalyticsListener
@@ -16,7 +21,6 @@ import com.project.tahlilukclient.models.Analytics
 import com.project.tahlilukclient.models.Lab
 import com.project.tahlilukclient.utilities.SupportFunctions
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class RequestReserveAnalyticsFragment : Fragment(),AnalyticsListener {
@@ -27,6 +31,8 @@ class RequestReserveAnalyticsFragment : Fragment(),AnalyticsListener {
     private var filteredAnalyticsList: ArrayList<Analytics> = ArrayList()
     private lateinit var adapter : AnalyticsAdapter
     private lateinit var changeStepView: ChangeStepView
+    private lateinit var lab:Lab
+    private lateinit var selectedAnalyticsList :ArrayList<Analytics>
 
 
 
@@ -37,11 +43,12 @@ class RequestReserveAnalyticsFragment : Fragment(),AnalyticsListener {
     ): View {
         binding = FragmentAnalyticsRequestReserveBinding.inflate(inflater)
         bundle = requireArguments()
-        val lab :Lab = bundle.getSerializable("lab") as Lab
+        lab  = bundle.getSerializable("lab") as Lab
         analyticsList = ArrayList()
         analyticsList = lab.Analytics!!
         setAnalytics(analyticsList)
         searchOnLabs()
+        setListenrs()
 
         return binding.root
     }
@@ -104,15 +111,39 @@ class RequestReserveAnalyticsFragment : Fragment(),AnalyticsListener {
     }
 
     override fun onAnalysisClicked(analyticsList: ArrayList<Analytics>) {
+        selectedAnalyticsList = ArrayList()
         if (analyticsList.size>0){
+            selectedAnalyticsList = analyticsList
             binding.btnSaveAnalytics.visibility = View.VISIBLE
-            Log.d("array",analyticsList.size.toString())
+
         }
         else {
+            selectedAnalyticsList = analyticsList
             binding.btnSaveAnalytics.visibility = View.GONE
         }
     }
 
+    private fun nextStep(){
+        changeStepView.increaseProgress()
+        val reserveAddressFragment =ReserveAddressFragment.newInstance(changeStepView)
+        val bundle = Bundle()
+        bundle.putSerializable("lab",lab)
+        bundle.putSerializable("analytics",selectedAnalyticsList)
+        reserveAddressFragment.arguments = bundle
+        val fragmentManager: FragmentManager =
+            (binding.root.context as FragmentActivity).supportFragmentManager
+        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_container, reserveAddressFragment)
+        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()
+
+    }
 
 
+    private fun setListenrs(){
+        binding.btnSaveAnalytics.setOnClickListener {
+            nextStep()
+        }
+
+    }
 }

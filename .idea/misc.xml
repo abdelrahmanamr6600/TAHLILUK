@@ -45,10 +45,12 @@
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/activity_sign_in.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/activity_sign_up.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/activity_verify_phone_number.xml" value="0.10182370820668693" />
-        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_analytics_request_reserve.xml" value="0.18" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_analytics_request_reserve.xml" value="0.1" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_blank.xml" value="0.10885416666666667" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_change_password.xml" value="0.1816123188405797" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_home.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_reserve_address.xml" value="0.18568840579710144" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_reserve_labs.xml" value="0.18568840579710144" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_settings.xml" value="0.10182370820668693" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/item_container_analyses.xml" value="0.1" />
