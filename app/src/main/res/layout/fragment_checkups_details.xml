@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/background_content_bottom"
+    tools:context=".fragments.CheckupsDetailsFragment">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_content_bottom">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15ssp"
+            android:layout_marginBottom="@dimen/_15ssp"
+            android:layout_gravity="center|top"
+            android:fontFamily="@font/ntailub"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/_16ssp"
+            android:gravity="center"
+            android:text="هرمون النمو" />
+
+        <TextView
+            android:id="@+id/tv_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_45ssp"
+            android:layout_gravity="center|top"
+            android:fontFamily="@font/ntailub"
+            android:textDirection="rtl"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/_16ssp"
+            android:gravity="start"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:text="هرمون النمو" />
+    </FrameLayout>
+
+</ScrollView>
+
+
+
+
+</FrameLayout>

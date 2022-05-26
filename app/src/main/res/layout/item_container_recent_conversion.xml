@@ -6,6 +6,7 @@
     android:clickable="true"
     android:clipToPadding="true"
     android:focusable="true"
+    android:layout_margin="@dimen/_5sdp"
     android:foreground="?android:attr/selectableItemBackground"
     app:cardBackgroundColor="@android:color/transparent"
     app:cardCornerRadius="@dimen/_10sdp"
@@ -14,7 +15,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/background"
+        android:background="@color/container_background"
         android:padding="@dimen/_8sdp">
 
         <com.makeramen.roundedimageview.RoundedImageView

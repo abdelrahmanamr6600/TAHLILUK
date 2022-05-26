@@ -9,12 +9,13 @@
     android:foreground="?android:attr/selectableItemBackground"
     app:cardBackgroundColor="@android:color/transparent"
     app:cardCornerRadius="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
     app:cardElevation="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/background"
+        android:background="@color/container_background"
         android:padding="@dimen/_8sdp">
 
         <com.makeramen.roundedimageview.RoundedImageView

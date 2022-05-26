@@ -38,8 +38,19 @@
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="visible"
             android:layout_gravity="center"/>
-
+ <TextView
+     android:id="@+id/TV_noAnalytics"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="@string/no_analytics_found"
+     android:gravity="center"
+     android:maxLines="1"
+     android:layout_gravity="center"
+     android:visibility="gone"
+     android:textSize="@dimen/_20ssp"
+     android:fontFamily="@font/ntailub"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_save_analytics"

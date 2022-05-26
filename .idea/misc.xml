@@ -27,35 +27,84 @@
         <entry key="..\:/Tahliluk-Client/app/src/main/res/layout/fragment_home.xml" value="0.5" />
         <entry key="..\:/Tahliluk-Client/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/Tahliluk-Client/app/src/main/res/layout/fragment_settings.xml" value="0.1" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable-ldltr/toggle_background_map.xml" value="0.137" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable-ldpi/background_reserve.xml" value="0.1" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable-ldrtl/background_input_note.xml" value="0.1745" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable-ldrtl/button_background.xml" value="0.122" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable-ldrtl/toggle_background_list.xml" value="0.102" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable-ldrtl/toggle_background_map.xml" value="0.1425" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable-ldrtl/toggle_backgroung_list.xml" value="0.2165" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1965" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable-v24/ic_notification.xml" value="0.1715" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable/background_content_bottom.xml" value="0.1" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable/background_content_top.xml" value="0.25" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable/background_input.xml" value="0.2165" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable/background_input_note.xml" value="0.1" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable/background_oval_shape_left.xml" value="0.1355" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable/background_oval_shape_right.xml" value="0.231" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable/background_received_message.xml" value="0.1715" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable/background_splash_screen.xml" value="0.2165" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable/button_background.xml" value="0.206" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable/button_sheet_button.xml" value="0.1625" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable/drawable_gender_tab_selector.xml" value="0.101" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.1995" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable/rounded_dialog.xml" value="0.1885" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable/selected_analytic.xml" value="0.13" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable/toggle_background_list.xml" value="0.13" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable/toggle_background_map.xml" value="0.13" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/drawable/toggle_background_out_line.xml" value="0.11" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout-ldrtl/activity_reserve.xml" value="0.16077898550724637" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout-ldrtl/item_container_checkups.xml" value="0.11322463768115942" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout-ldrtl/item_container_getready.xml" value="0.14221014492753623" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/activity_chat.xml" value="0.1322463768115942" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/activity_checkups.xml" value="0.1" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/activity_get_ready.xml" value="0.1" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/activity_labs.xml" value="0.1" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/activity_labs_chat.xml" value="0.1" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/activity_main.xml" value="0.209375" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/activity_main_chat.xml" value="0.1322463768115942" />
-        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/activity_reserve.xml" value="0.15670289855072464" />
-        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/activity_sign_in.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/activity_map.xml" value="0.14" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/activity_reservations.xml" value="0.33" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/activity_reserve.xml" value="0.1" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/activity_sign_in.xml" value="0.15" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/activity_sign_up.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/activity_splash_screen.xml" value="0.22" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/activity_verify_phone_number.xml" value="0.10182370820668693" />
-        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_analytics_request_reserve.xml" value="0.1" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/dialog_progress.xml" value="0.2006340579710145" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_analytics_request_reserve.xml" value="0.14" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_blank.xml" value="0.10885416666666667" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_change_password.xml" value="0.1816123188405797" />
-        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_home.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_change_phone.xml" value="0.10182370820668693" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_checkups_details.xml" value="0.1" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_checkups_list.xml" value="0.14545454545454545" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_confirm_reserve.xml" value="0.1" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_finish_reservation.xml" value="0.25" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_get_ready_details.xml" value="0.18" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_get_ready_list.xml" value="0.1" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_maps.xml" value="0.2" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_marker.xml" value="0.22" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_patient_reservations.xml" value="0.1" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
-        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_reserve_address.xml" value="0.18568840579710144" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_reservation_details.xml" value="0.1" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_reserve_address.xml" value="0.1" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_reserve_labs.xml" value="0.18568840579710144" />
-        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_settings.xml" value="0.10182370820668693" />
-        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/item_container_analyses.xml" value="0.1" />
-        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/item_container_received_message.xml" value="0.1322463768115942" />
-        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/item_container_recent_conversion.xml" value="0.1322463768115942" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_results.xml" value="0.22" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/fragment_settings.xml" value="0.25" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/item_container_analyses.xml" value="0.324577861163227" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/item_container_getready.xml" value="0.1" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/item_container_lab.xml" value="0.1" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/item_container_lab_card.xml" value="0.12" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/item_container_received_message.xml" value="0.1" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/item_container_recent_conversion.xml" value="0.1" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/item_container_reservations.xml" value="0.2" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/item_container_result.xml" value="0.10182370820668693" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/item_container_sent_message.xml" value="0.33" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/layout/item_custom_dialog_layout.xml" value="0.25" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/menu/menu.xml" value="0.17604166666666668" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/menu/popupmenu.xml" value="0.1" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.153" />
+        <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.153" />
         <entry key="..\:/Users/Abdelrahman Amr/Documents/GitHub/Tahliluk-Client/app/src/main/res/xml/root_preferences.xml" value="0.1" />
         <entry key="..\:/Users/Amr/AndroidStudioProjects/TahlilukClient/app/src/main/res/drawable-v24/background_input.xml" value="0.2703125" />
         <entry key="..\:/Users/Amr/AndroidStudioProjects/TahlilukClient/app/src/main/res/drawable-v24/background_oval_shape_left.xml" value="0.2703125" />

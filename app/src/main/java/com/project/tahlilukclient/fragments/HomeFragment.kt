@@ -9,10 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.project.tahlilukclient.activities.MainChatActivity
-import com.project.tahlilukclient.activities.MapActivity
-import com.project.tahlilukclient.activities.LabsActivity
-import com.project.tahlilukclient.activities.ReserveActivity
+import com.project.tahlilukclient.activities.*
 import com.project.tahlilukclient.databinding.FragmentHomeBinding
 import com.project.tahlilukclient.utilities.Constants
 import com.project.tahlilukclient.utilities.PreferenceManager
@@ -68,6 +65,15 @@ class HomeFragment : Fragment() {
         fragmentHomeBinding.cvReserve.setOnClickListener {
             startReserveActivity()
         }
+        fragmentHomeBinding.cvReservation.setOnClickListener {
+            startReservationsActivity()
+        }
+        fragmentHomeBinding.cvGetReady.setOnClickListener {
+            startGetReadyActivity()
+        }
+        fragmentHomeBinding.cvCheckUps.setOnClickListener {
+            startCheckupsActivity()
+        }
     }
 
     private fun startMainChatActivity() {
@@ -97,6 +103,47 @@ class HomeFragment : Fragment() {
         {
             SupportFunctions.showNoInternetSnackBar(fragmentHomeBinding)
         }
+    }
+
+    private fun startReservationsActivity(){
+
+        if (SupportFunctions.checkForInternet(requireContext()))  {
+            val intent = Intent(requireContext(), ReservationsActivity::class.java)
+            startActivity(intent)
+        }
+        else
+        {
+            SupportFunctions.showNoInternetSnackBar(fragmentHomeBinding)
+        }
+
+    }
+
+
+    private fun startGetReadyActivity(){
+
+        if (SupportFunctions.checkForInternet(requireContext()))  {
+            val intent = Intent(requireContext(), GetReadyActivity::class.java)
+            startActivity(intent)
+        }
+        else
+        {
+            SupportFunctions.showNoInternetSnackBar(fragmentHomeBinding)
+        }
+
+    }
+
+
+    private fun startCheckupsActivity(){
+
+        if (SupportFunctions.checkForInternet(requireContext()))  {
+            val intent = Intent(requireContext(), CheckupsActivity::class.java)
+            startActivity(intent)
+        }
+        else
+        {
+            SupportFunctions.showNoInternetSnackBar(fragmentHomeBinding)
+        }
+
     }
 
 }

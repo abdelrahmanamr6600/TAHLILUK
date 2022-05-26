@@ -29,7 +29,7 @@
         android:layout_marginStart="@dimen/_12sdp"
         android:layout_marginTop="@dimen/_3sdp"
         android:fontFamily="@font/ntailub"
-        android:shadowColor="@color/black"
+        android:shadowColor="@color/shadow"
         android:shadowDx="3"
         android:shadowDy="3"
         android:shadowRadius="2"

@@ -18,6 +18,7 @@ import com.project.tahlilukclient.firebase.FirestoreClass
 import com.project.tahlilukclient.listeners.ChangeStepView
 import com.project.tahlilukclient.listeners.LabListener
 import com.project.tahlilukclient.models.Lab
+import com.project.tahlilukclient.utilities.Constants
 import com.project.tahlilukclient.utilities.SupportFunctions
 import java.util.*
 
@@ -127,23 +128,16 @@ class ReserveLabsFragment : Fragment(),LabListener {
             changeStepView.increaseProgress()
             val requestReserveAnalyticsFragment =RequestReserveAnalyticsFragment.newInstance(changeStepView)
             val bundle = Bundle()
-            bundle.putSerializable("lab",lab)
+            bundle.putSerializable(Constants.SELECTED_LAB,lab)
             requestReserveAnalyticsFragment.arguments = bundle
             val fragmentManager: FragmentManager =
                 (reserveLabsBinding.root.context as FragmentActivity).supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.setCustomAnimations(R.anim.fui_slide_in_right,R.anim.fragmentanimation,R.anim.fui_slide_in_right,R.anim.fragmentanimation)
             fragmentTransaction.replace(R.id.fragment_container, requestReserveAnalyticsFragment)
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
 
     }
-
-    override fun onResume() {
-
-        super.onResume()
-    }
-
-
-
 
 }

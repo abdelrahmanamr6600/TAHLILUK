@@ -46,7 +46,7 @@
         android:fontFamily="@font/ntailub"
         android:gravity="center"
         android:maxLines="1"
-        android:shadowColor="@color/black_text"
+        android:shadowColor="@color/shadow"
         android:shadowDx="3"
         android:shadowDy="3"
         android:shadowRadius="2"

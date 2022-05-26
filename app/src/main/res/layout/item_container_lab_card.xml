@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/_2sdp"
-    app:cardBackgroundColor="@android:color/transparent"
+    android:layout_margin="@dimen/_5sdp"
     app:cardCornerRadius="@dimen/_16sdp"
+
     app:cardElevation="@dimen/_3sdp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:background="@color/container_background"
         android:layout_height="wrap_content">
 
         <com.makeramen.roundedimageview.RoundedImageView
@@ -123,7 +124,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/open_chat"
-                android:textColor="@color/black" />
+                android:textColor="@color/black_text" />
 
             <TextView
                 android:id="@+id/tv_show_map"
@@ -132,7 +133,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/show_on_map"
-                android:textColor="@color/black" />
+                android:textColor="@color/black_text" />
 
             <TextView
                 android:id="@+id/tv_req_reserve"
@@ -142,7 +143,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/reserve"
-                android:textColor="@color/black" />
+                android:textColor="@color/black_text" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

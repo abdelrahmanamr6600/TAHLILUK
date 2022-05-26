@@ -49,6 +49,17 @@ class Constants {
         const val KEY_LIGHT_MODE = "lightMode"
         const val KEY_CURRENT_LATITUDE = "currentLatitude"
         const val KEY_CURRENT_LONGITUDE = "currentLongitude"
+        const val KEY_COLLECTION_RESERVATION = "reservations"
+        const val KEY_COLLECTION_GetReady = "GetReady"
+        const val KEY_COLLECTION_Checkups = "Checkups"
+
+        //bundle keys
+        const val SELECTED_LAB = "lab"
+        const val SELECTED_ANALYTICS = "selectedAnalyticsList"
+        const val SELECTED_ADDRESS_LATITUDE = "addresslatitude"
+        const val SELECTED_ADDRESS_LONGITUDE = "addresslongitude"
+        const val RESERVATION_NOTE = "note"
+        const val ITEM = "item"
 
 
         var remoteMsgHeaders: HashMap<String, String>? = null

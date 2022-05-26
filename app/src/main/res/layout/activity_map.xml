@@ -15,7 +15,8 @@
         map:layout_constraintBottom_toBottomOf="parent"
         map:layout_constraintEnd_toEndOf="parent"
         map:layout_constraintStart_toStartOf="parent"
-        map:layout_constraintTop_toTopOf="parent" />
+        map:layout_constraintTop_toTopOf="parent"
+       />
 
     <RadioGroup
         android:id="@+id/rg"
@@ -41,7 +42,9 @@
             android:button="@null"
             android:gravity="center"
             android:text="@string/list"
-            android:textColor="@color/white" />
+            android:textColor="@color/black"
+
+            tools:ignore="TouchTargetSizeCheck" />
 
         <RadioButton
             android:id="@+id/rb_map"
@@ -55,7 +58,8 @@
             android:button="@null"
             android:gravity="center"
             android:text="@string/map"
-            android:textColor="@color/white">
+            android:textColor="@color/black"
+            tools:ignore="TouchTargetSizeCheck">
 
         </RadioButton>
 

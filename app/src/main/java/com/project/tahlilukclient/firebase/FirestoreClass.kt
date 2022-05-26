@@ -1,6 +1,9 @@
 package com.project.tahlilukclient.firebase
 
+import GetReady
 import android.app.Activity
+import android.util.Log
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
@@ -8,14 +11,13 @@ import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.firestore.*
 import com.google.firebase.firestore.EventListener
 import com.project.tahlilukclient.activities.*
-import com.project.tahlilukclient.fragments.ChangePasswordFragment
-import com.project.tahlilukclient.fragments.ChangePhoneFragment
-import com.project.tahlilukclient.fragments.ProfileFragment
-import com.project.tahlilukclient.fragments.ReserveLabsFragment
+import com.project.tahlilukclient.fragments.*
+import com.project.tahlilukclient.models.Checkups
 import com.project.tahlilukclient.models.Lab
+import com.project.tahlilukclient.models.Reserve
 import com.project.tahlilukclient.utilities.Constants
 import java.util.*
-import kotlin.collections.HashMap
+
 
 class FirestoreClass {
     private val mFireStore = FirebaseFirestore.getInstance()
@@ -501,6 +503,109 @@ class FirestoreClass {
                         fragment.closeProgressBar()
                     }
                 }
+            }
+    }
+    fun addReserve(fragment :ConfirmReserveFragment, reserve:Reserve,collectionName:String){
+        mFireStore.collection(collectionName)
+            .document()
+            .set(reserve, SetOptions.merge())
+            .addOnSuccessListener {
+                fragment.addReserve()
+            }
+            .addOnFailureListener {
+                Toast.makeText(fragment.context,"Error",Toast.LENGTH_LONG).show()
+            }
+    }
+
+
+    fun getReservations(fragment:PatientReservationsFragment, collectionName:String, userId:String ){
+
+        mFireStore.collection(collectionName)
+            .whereEqualTo(Constants.KEY_PATIENT_ID,userId)
+            .get()
+            .addOnSuccessListener {
+              val reservationsList :ArrayList<Reserve> = ArrayList()
+                for (reserve in it.documents){
+                    val reservation = reserve.toObject(Reserve::class.java)
+                    reservation!!.orderId = reserve.id
+                    reservationsList.add(reservation)
+                }
+
+                Log.d("size",reservationsList.size.toString())
+
+                fragment.successReservationsFromFireStore(reservationsList)
+            }
+            .addOnFailureListener {
+              Toast.makeText(fragment.requireContext(),"error",Toast.LENGTH_LONG).show()
+            }
+    }
+
+
+    fun deleteReservation(fragment: ReservationDetailsFragment,reserveId:String){
+        mFireStore.collection(Constants.KEY_COLLECTION_RESERVATION)
+            .document(reserveId)
+            .delete().addOnSuccessListener {
+                //fragment.deleteReservationSuccessful()
+
+            }
+            .addOnFailureListener {
+                Toast.makeText(fragment.requireContext().applicationContext,"Error",Toast
+                    .LENGTH_LONG).show()
+            }
+    }
+
+    fun getLabImage(fragment: PatientReservationsFragment,labId:String){
+        mFireStore.collection(Constants.Key_COLLECTION_LABS)
+            .document(labId)
+            .get()
+            .addOnSuccessListener {
+                 var image = it.get("image")
+                var labName = it.get("name")
+                fragment.setLabImage(image as String,labName as String)
+
+            }
+
+    }
+
+
+
+
+    fun getReady(fragment:GetReadyListFragment, collectionName:String ){
+
+        mFireStore.collection(collectionName)
+            .get()
+            .addOnSuccessListener {
+                val getReadyList :ArrayList<GetReady> = ArrayList()
+                for (item in it.documents){
+                    val item = item.toObject(GetReady::class.java)
+
+                    getReadyList.add(item!!)
+                }
+
+                fragment.successGetReadyListFromFireStore(getReadyList)
+            }
+            .addOnFailureListener {
+                Toast.makeText(fragment.requireContext(),"error",Toast.LENGTH_LONG).show()
+            }
+    }
+
+
+    fun getCheckups(fragment:CheckupsListFragment, collectionName:String ){
+
+        mFireStore.collection(collectionName)
+            .get()
+            .addOnSuccessListener {
+                val checkupsList :ArrayList<Checkups> = ArrayList()
+                for (item in it.documents){
+                    val item = item.toObject(Checkups::class.java)
+
+                    checkupsList.add(item!!)
+                }
+
+                fragment.successCheckupsListFromFireStore(checkupsList)
+            }
+            .addOnFailureListener {
+                Toast.makeText(fragment.requireContext(),"error",Toast.LENGTH_LONG).show()
             }
     }
 

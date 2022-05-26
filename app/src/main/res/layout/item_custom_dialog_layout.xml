@@ -46,7 +46,7 @@
         android:paddingTop="@dimen/_8sdp"
         android:text="@string/select_a_language"
         android:textAlignment="center"
-        android:textColor="@color/primary_text"
+        android:textColor="@color/select_Language"
         android:textSize="@dimen/_13ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

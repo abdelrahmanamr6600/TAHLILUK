@@ -79,13 +79,14 @@ class ChatAdapter(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (getItemViewType(position) == VIEW_TYPE_SENT) {
             (holder as SentMessageViewHolder).setData(chatMessages[position])
-            holder.itemView.startAnimation(AnimationUtils.loadAnimation(holder.itemView.context, R.anim.rv_animation_recived))
+            holder.itemView.startAnimation(AnimationUtils.loadAnimation(holder.itemView.context, R.anim.rv_animation_sent))
         } else {
             (holder as ReceivedMessageViewHolder).setData(
                 chatMessages[position],
                 receiverProfileImage!!
 
             )
+            holder.itemView.startAnimation(AnimationUtils.loadAnimation(holder.itemView.context, R.anim.rv_animation_recived))
 
         }
 

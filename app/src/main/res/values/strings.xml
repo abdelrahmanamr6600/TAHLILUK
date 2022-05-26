@@ -86,7 +86,46 @@
     <string name="cancel">Cancel</string>
     <string name="no_analytics_found">No Analytics have been added yet</string>
     <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="current_location">"Your current location "</string>
+    <string name="Additional_instructions">Additional instructions</string>
+    <string name="type_here">type here</string>
+    <string name="choose_lab">choose\nLab</string>
+    <string name="choose_analytics">choose\nAnalytics</string>
+    <string name="choose_Address"> Choose\nAddress</string>
+    <string name="confirm_Request"> Confirm\nRequest</string>
+    <string name="change_location">"change address "</string>
+    <string name="pin">pin</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="selected_analyses">selected analytics</string>
+    <string name="selectedaddress">Selected Address</string>
+    <string name="lbl_subtotal">sub total</string>
+    <string name="lbl_Home_visit_cost">"Home visit cost "</string>
+    <string name="lbl_total_amount">total amount</string>
+    <string name="The_cost_of_the_analysis">The cost of the analysis</string>
+    <string name="Tv_Analytics">Analytics</string>
+    <string name="Visiting_expenses">Visiting expenses</string>
+    <string name="patient_information">patient name</string>
+    <string name="egyptian_currency">EGP</string>
+    <string name="send_request">Send Request</string>
+    <string name="succcessConfirmation">We are done reserving the lab will contact you soon using this number</string>
+    <string name="no_reservations">No reservations added yet!</string>
+    <string name="reserve_now">reserve now</string>
+    <string name="order_details">order details</string>
+    <string name="visit_price" translatable="false">"50.0EGP"</string>
+    <string name="order_date">Order Date :</string>
+    <string name="order_state">Order State :</string>
+    <string name="cancel_request">Cancel Request</string>
+    <string name="labName">Lab name :</string>
+    <string name="pending">Pending</string>
+    <string name="inprogress">in Progress</string>
+    <string name="completed">completed</string>
+    <string name="getReady">Get Ready</string>
+    <string name="analyses_result">Analysis Result</string>
+    <string name="know_result">Show Result</string>
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
 
 
 </resources>

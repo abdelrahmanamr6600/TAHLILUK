@@ -14,6 +14,7 @@ import com.google.android.gms.maps.model.*
 import com.project.tahlilukclient.R
 import com.project.tahlilukclient.databinding.ActivityMapBinding
 import com.project.tahlilukclient.firebase.FirestoreClass
+import com.project.tahlilukclient.fragments.MarkerFragment
 import com.project.tahlilukclient.models.Lab
 import com.project.tahlilukclient.utilities.Constants
 import com.project.tahlilukclient.utilities.SupportFunctions
@@ -26,6 +27,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerC
     private lateinit var clientLocation: FusedLocationProviderClient
     private var mLabsList: ArrayList<Lab> = ArrayList()
     private var currentLatLong: LatLng? = null
+    private lateinit var marker: Marker
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,26 +72,30 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerC
         mMap.setOnMarkerClickListener(this)
         mMap.uiSettings.isZoomControlsEnabled = true
         mMap.uiSettings.isMyLocationButtonEnabled = true
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLong!!, 13f))
+
     }
 
     fun placeMarkerOnMap(labsList: ArrayList<Lab>) {
+        val markerOptions = MarkerOptions().position(currentLatLong!!)
+            .icon(BitmapDescriptorFactory.defaultMarker())
+        markerOptions.title("$currentLatLong")
+        mMap.addMarker(markerOptions)
         mLabsList = labsList
         for (m in labsList) {
             val labLatLng = LatLng(m.labLatitude!!.toDouble(), m.labLongitude!!.toDouble())
-            val marker = MarkerOptions().position(labLatLng)
+            val markerOptions = MarkerOptions().position(labLatLng)
                 .icon(BitmapDescriptorFactory.fromBitmap(getCircleBitmap(getLabImage(m.image!!))!!))
-            mMap.addMarker(marker)
-            val markerOptions = MarkerOptions().position(currentLatLong!!)
-                .icon(BitmapDescriptorFactory.defaultMarker())
-            markerOptions.title("$currentLatLong")
-            mMap.addMarker(markerOptions)
-            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLong!!, 13f))
+            marker = mMap.addMarker(markerOptions)!!
+            marker.tag =m
         }
 
     }
 
     override fun onMarkerClick(p0: Marker): Boolean {
-        Toast.makeText(this, "hello", Toast.LENGTH_LONG).show()
+        val lab:Lab  = p0.tag as Lab
+        MarkerFragment.newInstance(lab)
+            .show(supportFragmentManager, MarkerFragment.Tag)
         return true
     }
 

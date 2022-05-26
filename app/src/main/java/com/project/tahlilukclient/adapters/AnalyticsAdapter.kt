@@ -15,6 +15,7 @@ import com.project.tahlilukclient.models.Analytics
 
 class AnalyticsAdapter(private var analytics: ArrayList<Analytics>, private var listener: AnalyticsListener) :
     RecyclerView.Adapter<AnalyticsAdapter.LabViewHolder>() {
+
     private var analyticsList:ArrayList<Analytics> = ArrayList()
 
     inner class LabViewHolder(var binding: ItemContainerAnalysesBinding) :

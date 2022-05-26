@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+   android:background="@color/background"
     tools:context=".fragments.ProfileFragment">
 
     <View
@@ -43,7 +43,7 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_5sdp"
         app:cardCornerRadius="@dimen/_5sdp"
-        app:cardBackgroundColor="@color/white_background"
+        app:cardBackgroundColor="@color/container_background"
         app:cardElevation="@dimen/_10sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

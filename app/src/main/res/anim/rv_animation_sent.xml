@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="ExtraText">
+    <alpha android:fromAlpha="0"
+        android:toAlpha="1"
+        android:duration="600"/>
+    <scale
+        android:fromXScale="3"
+        android:fromYScale="3"
+        android:toXScale="1"
+        android:toYScale="1"
+        android:duration="300" />
+
+
+</set>

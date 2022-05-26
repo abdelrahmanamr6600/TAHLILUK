@@ -25,6 +25,7 @@ import com.google.android.gms.location.*
 import com.project.tahlilukclient.databinding.ItemContainerLabCardBinding
 
 
+
 class LabsInfoAdapter(
     var activity: LabsActivity,
     private var labs: ArrayList<Lab>,
@@ -77,6 +78,12 @@ class LabsInfoAdapter(
             binding.ivOpenMap.setOnClickListener {
                 openMap(lab)
             }
+            binding.ivReqReserve.setOnClickListener {
+                LabsActivity.statue = 1
+                labListener.onLabClicked(lab)
+            }
+
+
 
             reTouchAfterDelay(binding)
         }
@@ -123,7 +130,7 @@ class LabsInfoAdapter(
 
     private fun goToMap(lab: Lab) {
         val uri =
-            Uri.parse("https://www.google.co.in/maps/dir/${lab.labLatitude},${lab.labLongitude}/${currentLatLong!!.latitude},${currentLatLong!!.longitude}")
+            Uri.parse("https://www.google.co.in/maps/dir/${currentLatLong!!.latitude},${currentLatLong!!.longitude}/${lab.labLatitude},${lab.labLongitude}")
         val dirIntent = Intent(Intent.ACTION_VIEW, uri)
         dirIntent.setPackage("com.google.android.apps.maps")
         dirIntent.resolveActivity(activity.packageManager).let {

@@ -29,6 +29,12 @@ class LabsActivity : AppCompatActivity(), LabListener {
     private var labsList: ArrayList<Lab> = ArrayList()
     private lateinit var searchView: SearchView
     var count: Int = 0
+    companion object{
+        /* when statue Equal 0 open ChatActivity with clicked lab
+         when   when statue Equal 1 open ReserveActivity  with clicked lab
+        */
+        var statue= 0
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -173,9 +179,18 @@ class LabsActivity : AppCompatActivity(), LabListener {
     }
 
     override fun onLabClicked(lab: Lab) {
-        val intent = Intent(applicationContext, ChatActivity::class.java)
-        intent.putExtra(Constants.KEY_LAB, lab)
-        startActivity(intent)
+        if(statue==0){
+            val intent = Intent(applicationContext, ChatActivity::class.java)
+            intent.putExtra(Constants.KEY_LAB, lab)
+            startActivity(intent)
+        }
+        else{
+                val intent = Intent(applicationContext, ReserveActivity::class.java)
+                intent.putExtra(Constants.KEY_LAB, lab)
+                startActivity(intent)
+        }
+
+
     }
 
 
@@ -187,6 +202,7 @@ class LabsActivity : AppCompatActivity(), LabListener {
     fun clickOnMapShow() {
         activityLabsBinding.rbList.performClick()
         activityLabsBinding.rbMap.performClick()
+
     }
 
     override fun onResume() {
