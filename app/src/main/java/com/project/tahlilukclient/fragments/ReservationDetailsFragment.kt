@@ -3,12 +3,10 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Base64
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
@@ -18,9 +16,8 @@ import com.project.tahlilukclient.R
 import com.project.tahlilukclient.adapters.ConfirmAnalyticsAdapter
 import com.project.tahlilukclient.databinding.FragmentReservationDetailsBinding
 import com.project.tahlilukclient.firebase.FirestoreClass
-import com.project.tahlilukclient.models.AnalysisResult
 import com.project.tahlilukclient.models.Reserve
-import java.util.*
+import com.project.tahlilukclient.utilities.Constants
 
 class ReservationDetailsFragment : Fragment() {
     private lateinit var reservationDetailsBinding: FragmentReservationDetailsBinding
@@ -29,29 +26,21 @@ class ReservationDetailsFragment : Fragment() {
     lateinit var adapter: ConfirmAnalyticsAdapter
     lateinit var image:String
     lateinit var labName:String
-
     companion object {
-
         @JvmStatic
         fun newInstance() =
             ReservationDetailsFragment().apply {
                 arguments = Bundle().apply {
-
-
                 }
             }
     }
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
          bundle=requireArguments()
-        reservation = bundle.getSerializable("reservation") as Reserve
-        image = bundle.getString("image")!!
-        labName = bundle.getString("labName")!!
-
+        reservation = bundle.getSerializable(Constants.Reservation) as Reserve
+        image = bundle.getString(Constants.IMAGE)!!
+        labName = bundle.getString(Constants.LAB_NAME)!!
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -61,7 +50,6 @@ class ReservationDetailsFragment : Fragment() {
         setListeners()
         return reservationDetailsBinding.root
     }
-
     private fun setReservationData(){
        reservationDetailsBinding.tvOrderLabName.text = labName
         reservationDetailsBinding.tvOrderDate.text = reservation.orderDateTime
@@ -71,9 +59,9 @@ class ReservationDetailsFragment : Fragment() {
         reservationDetailsBinding.tvConfirmAddress.text = reservation.orderAddress
         reservationDetailsBinding.tvCheckoutShippingCharge.text =getString(R.string.visit_price)
         when(reservation.orderState){
-            "pending"  -> reservationDetailsBinding.tvOrderState.setTextColor(ContextCompat.getColorStateList(requireContext(),R.color.error_color))
-            "in progress"  -> reservationDetailsBinding.tvOrderState.setTextColor(ContextCompat.getColorStateList(requireContext(),R.color.error))
-            "Accepted" -> reservationDetailsBinding.tvOrderState.setTextColor(ContextCompat.getColorStateList(requireContext(),R.color.primary_text))
+            getString(R.string.pending)  -> reservationDetailsBinding.tvOrderState.setTextColor(ContextCompat.getColorStateList(requireContext(),R.color.error_color))
+            getString(R.string.inprogress)  -> reservationDetailsBinding.tvOrderState.setTextColor(ContextCompat.getColorStateList(requireContext(),R.color.error))
+            getString(R.string.completed) -> reservationDetailsBinding.tvOrderState.setTextColor(ContextCompat.getColorStateList(requireContext(),R.color.primary_text))
         }
         reservationDetailsBinding.tvOrderState.text = reservation.orderState
         reservationDetailsBinding.ivLabImage.setImageBitmap(getLabImage(image))
@@ -87,9 +75,7 @@ class ReservationDetailsFragment : Fragment() {
         {
             reservationDetailsBinding.CvResult.visibility =View.VISIBLE
         }
-
     }
-
 private fun setListeners(){
     reservationDetailsBinding.btnCancelRequest.setOnClickListener {
         FirestoreClass().deleteReservation(this,reservation.orderId!!)
@@ -99,8 +85,8 @@ private fun setListeners(){
     reservationDetailsBinding.btnShowResult.setOnClickListener {
         val resultFragment  = ResultsFragment.newInstance()
         val bundle = Bundle()
-        bundle.putString("labImage",image)
-        bundle.putSerializable("list",reservation.resultsList)
+        bundle.putString(Constants.IMAGE,image)
+        bundle.putSerializable(Constants.ANALYTICS_RESULT,reservation.resultsList)
         resultFragment.arguments = bundle
         val fragmentManager: FragmentManager =
             (reservationDetailsBinding.root.context as FragmentActivity).supportFragmentManager

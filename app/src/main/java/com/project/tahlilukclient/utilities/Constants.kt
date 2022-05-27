@@ -60,6 +60,10 @@ class Constants {
         const val SELECTED_ADDRESS_LONGITUDE = "addresslongitude"
         const val RESERVATION_NOTE = "note"
         const val ITEM = "item"
+        const val Reservation = "reservation"
+        const val IMAGE = "image"
+        const val LAB_NAME ="labName"
+        const val ANALYTICS_RESULT = "AnalyticsResult"
 
 
         var remoteMsgHeaders: HashMap<String, String>? = null

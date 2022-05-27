@@ -100,9 +100,9 @@ class PatientReservationsFragment : Fragment(),ReservationListener {
             delay(420)
             val reservationDetailsFragment  = ReservationDetailsFragment.newInstance()
             val bundle = Bundle()
-            bundle.putSerializable("reservation",reserve)
-            bundle.putString("image",image)
-            bundle.putString("labName",labName)
+            bundle.putSerializable(Constants.Reservation,reserve)
+            bundle.putString(Constants.IMAGE,image)
+            bundle.putString(Constants.LAB_NAME,labName)
             reservationDetailsFragment.arguments = bundle
             val fragmentManager: FragmentManager =
                 (binding.root.context as FragmentActivity).supportFragmentManager

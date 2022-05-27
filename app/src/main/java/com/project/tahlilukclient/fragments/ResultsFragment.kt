@@ -8,10 +8,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.project.tahlilukclient.R
 import com.project.tahlilukclient.databinding.FragmentResultsBinding
-
-
+import com.project.tahlilukclient.utilities.Constants
 class ResultsFragment : Fragment() {
     private lateinit var binding :FragmentResultsBinding
     private lateinit var bundle:Bundle
@@ -21,7 +19,7 @@ class ResultsFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bundle = requireArguments()
-       image = bundle.getString("labImage").toString()
+       image = bundle.getString(Constants.IMAGE).toString()
 
 
 
