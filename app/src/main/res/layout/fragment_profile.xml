@@ -25,7 +25,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <View
             android:id="@+id/viewSupporter"
             android:layout_width="match_parent"
@@ -71,7 +70,6 @@
                     android:layout_height="match_parent"
                     android:background="@color/container_background"
                     android:orientation="vertical">
-
 
                     <EditText
                         android:id="@+id/first_name"
@@ -276,7 +274,7 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_logout"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_height="@dimen/_45sdp"
                     android:elevation="@dimen/_20sdp"
                     android:fontFamily="@font/ntailub"
                     android:gravity="center"

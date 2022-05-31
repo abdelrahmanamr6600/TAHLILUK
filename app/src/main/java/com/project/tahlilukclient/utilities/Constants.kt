@@ -42,7 +42,7 @@ class Constants {
         const val KEY_LANGUAGE_ENGLISH = "en"
         const val KEY_LANGUAGE_ARABIC = "ar"
         const val LOCATION_REQUEST_CODE = 1
-        const val Key_COLLECTION_LABS: String = "labs"
+        const val Key_COLLECTION_LABS: String = "labss"
         const val KEY_SELECT_LAB_CHAT = "chat"
         const val KEY_DARK_MODE_STATE = "darkModeState"
         const val KEY_DARK_MODE = "darkMode"

@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:clickable="true"
-    android:clipToPadding="true"
     android:layout_marginStart="@dimen/_2sdp"
     android:layout_marginEnd="@dimen/_2sdp"
     android:layout_marginBottom="@dimen/_7sdp"
+    android:clickable="true"
+    android:clipToPadding="true"
     android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground"
     app:cardBackgroundColor="@android:color/transparent"
@@ -22,7 +22,6 @@
         android:background="@color/container_background"
         android:padding="@dimen/_8sdp">
 
-
         <TextView
             android:id="@+id/getReady_title"
             android:layout_width="0dp"
@@ -31,14 +30,12 @@
             android:fontFamily="@font/ntailub"
             android:gravity="center"
             android:maxLines="1"
-            android:text="الووووو"
             android:textColor="@color/primary_text"
-            android:textSize="@dimen/_20ssp"
+            android:textSize="@dimen/_17ssp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

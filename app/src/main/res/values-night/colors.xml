@@ -10,10 +10,11 @@
     <color name="input_background">#ECECEC</color>
     <color name="shadow">#000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="white_background">#212121</color>
-    <color name="input_white">#212121</color>
-    <color name="black">#FFFFFFFF</color>
-    <color name="black_text">#FFFFFFFF</color>
+    <color name="white_splash">#000000</color>
+    <color name="white_background">#0b1328</color>
+    <color name="input_white">#101a36</color>
+    <color name="black">#FFFFFF</color>
+    <color name="black_text">#0b1328</color>
     <color name="error">#B00020</color>
     <color name="code_input_underline_selected_color">#404afd</color>
     <color name="count_background_color">#ff6f00</color>

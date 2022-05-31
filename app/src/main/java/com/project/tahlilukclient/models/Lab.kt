@@ -1,16 +1,17 @@
 package com.project.tahlilukclient.models
 
-import com.google.firebase.firestore.GeoPoint
 import java.io.Serializable
 
 class Lab : Serializable {
-    var name: String? = null
+    var labName: String? = null
     var image: String? = null
     var address: String? = null
-    var phone: String? = null
-    var labLatitude : String?=null
-    var Analytics: ArrayList<Analytics>? = null
-    var labLongitude:String?= name
-    var token: String? = null
+    var phoneNumber: String? = null
+    var latitude: String? = null
+    var analytics: ArrayList<Analytics>? = null
+    var longitude: String? = null
     var id: String? = null
+    var password: String? = null
+    var labVerifiedState: String? = null
+    var fcmToken: String? = null
 }

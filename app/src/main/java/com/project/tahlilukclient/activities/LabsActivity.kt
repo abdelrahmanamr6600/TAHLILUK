@@ -10,6 +10,7 @@ import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.project.tahlilukclient.R
 import com.project.tahlilukclient.adapters.LabsInfoAdapter
 import com.project.tahlilukclient.databinding.ActivityLabsBinding
 import com.project.tahlilukclient.firebase.FirestoreClass
@@ -29,11 +30,12 @@ class LabsActivity : AppCompatActivity(), LabListener {
     private var labsList: ArrayList<Lab> = ArrayList()
     private lateinit var searchView: SearchView
     var count: Int = 0
-    companion object{
+
+    companion object {
         /* when statue Equal 0 open ChatActivity with clicked lab
          when   when statue Equal 1 open ReserveActivity  with clicked lab
         */
-        var statue= 0
+        var statue = 0
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,6 +61,7 @@ class LabsActivity : AppCompatActivity(), LabListener {
         activityLabsBinding.rg.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
                 activityLabsBinding.rbMap.id -> {
+//
                     if (labsListAdapter.currentLatLong != null) {
                         activityLabsBinding.userRecyclerView.visibility = View.GONE
                         SupportFunctions.loading(true, null, activityLabsBinding.progressBar)
@@ -118,9 +121,11 @@ class LabsActivity : AppCompatActivity(), LabListener {
                             } catch (ex: Exception) {
                             }
                         }
+
                     }
                 }
             }
+
         }
     }
 
@@ -166,7 +171,7 @@ class LabsActivity : AppCompatActivity(), LabListener {
         val filteredLabList: ArrayList<Lab> = ArrayList()
         for (lab in labsList) {
             if (labName != null) {
-                if (lab.name?.lowercase(Locale.getDefault())
+                if (lab.labName?.lowercase(Locale.getDefault())
                         ?.contains(labName.lowercase(Locale.getDefault())) == true
                 )
                     filteredLabList.add(lab)
@@ -179,15 +184,14 @@ class LabsActivity : AppCompatActivity(), LabListener {
     }
 
     override fun onLabClicked(lab: Lab) {
-        if(statue==0){
+        if (statue == 0) {
             val intent = Intent(applicationContext, ChatActivity::class.java)
             intent.putExtra(Constants.KEY_LAB, lab)
             startActivity(intent)
-        }
-        else{
-                val intent = Intent(applicationContext, ReserveActivity::class.java)
-                intent.putExtra(Constants.KEY_LAB, lab)
-                startActivity(intent)
+        } else {
+            val intent = Intent(applicationContext, ReserveActivity::class.java)
+            intent.putExtra(Constants.KEY_LAB, lab)
+            startActivity(intent)
         }
 
 

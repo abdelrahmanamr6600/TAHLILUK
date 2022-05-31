@@ -53,7 +53,7 @@ class MainChatActivity : BaseActivity(), ConversionListener {
         binding.textName.text = preferenceManager.getString(Constants.KEY_FIRSTNAME)
         val bitmap =
             SupportFunctions.decodeImage(preferenceManager.getString(Constants.KEY_IMAGE)!!)
-        binding.imageProfile.setImageBitmap(bitmap)
+        binding.labImageProfile.setImageBitmap(bitmap)
     }
 
     private fun listenConversations() {

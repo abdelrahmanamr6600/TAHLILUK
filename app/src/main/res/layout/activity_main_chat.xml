@@ -9,16 +9,17 @@
     tools:context=".activities.MainChatActivity">
 
     <com.makeramen.roundedimageview.RoundedImageView
-        android:id="@+id/imageProfile"
+        android:id="@+id/labImageProfile"
         android:layout_width="@dimen/_30sdp"
         android:layout_height="@dimen/_30sdp"
         android:layout_marginStart="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_12sdp"
         android:layout_marginEnd="@dimen/_16sdp"
-        android:background="@drawable/background_icon"
+        android:background="@drawable/background_image"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_oval="true" />
 
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -46,7 +47,7 @@
         android:fontFamily="@font/ntailub"
         android:gravity="center"
         android:maxLines="1"
-        android:shadowColor="@color/shadow"
+        android:shadowColor="@color/black_text"
         android:shadowDx="3"
         android:shadowDy="3"
         android:shadowRadius="2"
@@ -54,7 +55,7 @@
         android:textSize="@dimen/_14ssp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/imageBack"
-        app:layout_constraintEnd_toStartOf="@+id/imageProfile"
+        app:layout_constraintEnd_toStartOf="@+id/labImageProfile"
         app:layout_constraintStart_toEndOf="@id/imageBack"
         app:layout_constraintTop_toTopOf="@id/imageBack" />
 

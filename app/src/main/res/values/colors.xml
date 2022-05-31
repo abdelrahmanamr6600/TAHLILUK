@@ -8,8 +8,9 @@
     <color name="third_text">#C8C8C8</color>
     <color name="fourth_text">#0D3737</color>
     <color name="input_background">#ECECEC</color>
-    <color name="shadow">#000000</color>
+    <color name="shadow">#d6d6d6</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white_splash">#FFFFFFFF</color>
     <color name="white_background">#FFFFFFFF</color>
     <color name="input_white">#FFFFFFFF</color>
     <color name="black">#000000</color>

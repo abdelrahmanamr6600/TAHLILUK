@@ -4,12 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clipToPadding="false"
     android:background="@color/white_background"
+    android:clipToPadding="false"
     android:overScrollMode="never"
     android:scrollbars="none"
     tools:context=".activities.VerifyPhoneNumberActivity">
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -96,14 +95,14 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnVerify"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_55sdp"
-                android:layout_marginStart="@dimen/_45sdp"
-                android:layout_marginEnd="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginStart="@dimen/_55sdp"
+                android:layout_marginEnd="@dimen/_55sdp"
                 android:fontFamily="@font/ntailub"
                 android:text="@string/verify"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_20ssp"
+                android:textSize="@dimen/_15ssp"
                 android:textStyle="bold"
                 app:cornerRadius="@dimen/_25sdp" />
 

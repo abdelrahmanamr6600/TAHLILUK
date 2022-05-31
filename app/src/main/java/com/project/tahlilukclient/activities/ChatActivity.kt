@@ -61,7 +61,7 @@ class ChatActivity : BaseActivity() {
 
     private fun loadReceiverDetails() {
         receiverLab = intent.getSerializableExtra(Constants.KEY_LAB) as Lab
-        binding.textName.text = receiverLab.name
+        binding.textName.text = receiverLab.labName
     }
 
     private fun setListeners() {
@@ -70,7 +70,7 @@ class ChatActivity : BaseActivity() {
         }
         binding.layoutSend.setOnClickListener {
             if (binding.inputMessage.text.isNotEmpty()) {
-                    sendMessage()
+                sendMessage()
 
             }
         }
@@ -106,7 +106,7 @@ class ChatActivity : BaseActivity() {
             preferenceManager.getString(Constants.KEY_FIRSTNAME)!!
         conversion[Constants.KEY_SENDER_IMAGE] = preferenceManager.getString(Constants.KEY_IMAGE)!!
         conversion[Constants.KEY_RECEIVER_ID] = receiverLab.id!!
-        conversion[Constants.KEY_RECEIVER_NAME] = receiverLab.name!!
+        conversion[Constants.KEY_RECEIVER_NAME] = receiverLab.labName!!
         conversion[Constants.KEY_RECEIVER_IMAGE] = receiverLab.image!!
         conversion[Constants.KEY_LAST_MESSAGE] = binding.inputMessage.text.toString()
         conversion[Constants.KEY_TIMESTAMP] = Date()
@@ -116,18 +116,18 @@ class ChatActivity : BaseActivity() {
     fun goSendNotification() {
         try {
             val tokens = JSONArray()
-            tokens.put(receiverLab.token)
+            tokens.put(receiverLab.fcmToken)
             val data = JSONObject()
             data.put(
-                Constants.KEY_PATIENT_ID,
+                "id",
                 preferenceManager.getString(Constants.KEY_PATIENT_ID)
             )
-            data.put(Constants.KEY_NAME, preferenceManager.getString(Constants.KEY_FIRSTNAME))
+            data.put("name", preferenceManager.getString(Constants.KEY_FIRSTNAME))
             data.put(
-                Constants.KEY_FCM_TOKEN,
+                "fcmToken",
                 preferenceManager.getString(Constants.KEY_FCM_TOKEN)
             )
-            data.put(Constants.KEY_MESSAGE, binding.inputMessage.text.toString())
+            data.put("message", binding.inputMessage.text.toString())
 
             val body = JSONObject()
             body.put(Constants.REMOTE_MSG_DATA, data)
@@ -165,7 +165,6 @@ class ChatActivity : BaseActivity() {
                     } catch (e: JSONException) {
                         e.printStackTrace()
                     }
-                    SupportFunctions.showToast(applicationContext, "Notification sent successfully")
                 } else {
                     //SupportFunctions.showToast(applicationContext, "Error: ${response.code()}")
                     SupportFunctions.showToast(
@@ -177,7 +176,10 @@ class ChatActivity : BaseActivity() {
 
             override fun onFailure(@NotNull call: Call<String>, @NotNull t: Throwable) {
                 //SupportFunctions.showToast(applicationContext, t.toString())
-                SupportFunctions.showToast(applicationContext, resources.getString(R.string.error) + " " + t)
+                SupportFunctions.showToast(
+                    applicationContext,
+                    resources.getString(R.string.error) + " " + t
+                )
             }
 
         })
@@ -186,8 +188,8 @@ class ChatActivity : BaseActivity() {
     private fun listenAvailabilityOfReceiver() {
         FirestoreClass().listenAvailabilityOfReceiver(
             this,
-            Constants.KEY_COLLECTION_PATIENTS,
-            receiverLab
+            Constants.Key_COLLECTION_LABS,
+            receiverLab.id!!
         )
     }
 
@@ -198,7 +200,7 @@ class ChatActivity : BaseActivity() {
             )!!.toInt()
             isReceiverAvailable = availability == 1
         }
-        receiverLab.token = value.getString(Constants.KEY_FCM_TOKEN)
+        receiverLab.fcmToken = value.getString(Constants.KEY_FCM_TOKEN)
         if (receiverLab.image == null) {
             receiverLab.image = value.getString(Constants.KEY_IMAGE)
             chatAdapter.setReceiverImageProfile(getBitmapFromEncodedString(receiverLab.image)!!)
@@ -326,7 +328,6 @@ class ChatActivity : BaseActivity() {
                 val documentSnapshot: DocumentSnapshot = it.result!!.documents[0]
                 conversionId = documentSnapshot.id
             }
-
         }
 
     override fun onResume() {

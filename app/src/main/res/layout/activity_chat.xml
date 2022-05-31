@@ -8,7 +8,6 @@
     android:background="@color/primary"
     tools:context=".activities.ChatActivity">
 
-
     <View
         android:id="@+id/headerBackground"
         android:layout_width="match_parent"
@@ -40,18 +39,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/white" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageInfo"
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/patientImage"
         android:layout_width="@dimen/_30sdp"
         android:layout_height="@dimen/_30sdp"
         android:layout_marginStart="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_12sdp"
         android:layout_marginEnd="@dimen/_16sdp"
-        android:padding="@dimen/_4sdp"
-        android:src="@drawable/ic_info"
+        android:background="@drawable/background_image"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/white" />
+        app:riv_oval="true" />
 
     <TextView
         android:id="@+id/textName"
@@ -71,7 +70,7 @@
         android:textSize="@dimen/_14ssp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/imageBack"
-        app:layout_constraintEnd_toStartOf="@id/imageInfo"
+        app:layout_constraintEnd_toStartOf="@id/patientImage"
         app:layout_constraintStart_toEndOf="@id/imageBack"
         app:layout_constraintTop_toTopOf="@id/imageBack" />
 

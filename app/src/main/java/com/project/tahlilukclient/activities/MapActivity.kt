@@ -3,7 +3,6 @@ package com.project.tahlilukclient.activities
 import android.graphics.*
 import android.os.Bundle
 import android.util.Base64
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -83,7 +82,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerC
         mMap.addMarker(markerOptions)
         mLabsList = labsList
         for (m in labsList) {
-            val labLatLng = LatLng(m.labLatitude!!.toDouble(), m.labLongitude!!.toDouble())
+            val labLatLng = LatLng(m.latitude!!.toDouble(), m.longitude!!.toDouble())
             val markerOptions = MarkerOptions().position(labLatLng)
                 .icon(BitmapDescriptorFactory.fromBitmap(getCircleBitmap(getLabImage(m.image!!))!!))
             marker = mMap.addMarker(markerOptions)!!

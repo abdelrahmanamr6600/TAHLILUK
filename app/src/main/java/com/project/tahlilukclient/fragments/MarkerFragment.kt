@@ -36,7 +36,7 @@ class MarkerFragment : BottomSheetDialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        markerFragmentBinding.textLabName.text = lab.name
+        markerFragmentBinding.textLabName.text = lab.labName
         markerFragmentBinding = FragmentMarkerBinding.inflate(inflater)
         return markerFragmentBinding.root
     }
@@ -78,7 +78,7 @@ class MarkerFragment : BottomSheetDialogFragment() {
     }
 
     private fun  fillInLabData(){
-        markerFragmentBinding.textLabName.text = lab.name
+        markerFragmentBinding.textLabName.text = lab.labName
         markerFragmentBinding.textLabAddress.text = lab.address
         markerFragmentBinding.ivLabProfile.setImageBitmap(getLabImage(lab.image!!))
     }

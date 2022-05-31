@@ -49,7 +49,7 @@ class RequestReserveAnalyticsFragment : Fragment(),AnalyticsListener {
         super.onViewCreated(view, savedInstanceState)
         bundle = requireArguments()
         lab  = bundle.getSerializable(Constants.SELECTED_LAB) as Lab
-        setAnalytics( lab.Analytics!!)
+        setAnalytics( lab.analytics!!)
         searchOnLabs()
         setListeners()
     }
@@ -106,7 +106,7 @@ class RequestReserveAnalyticsFragment : Fragment(),AnalyticsListener {
     @SuppressLint("NotifyDataSetChanged")
     private fun filerList(labName: String?) {
         filteredAnalyticsList = ArrayList()
-        for(analytic in lab.Analytics!!){
+        for(analytic in lab.analytics!!){
             if (labName != null) {
                 if (analytic.analysis_name?.lowercase(Locale.getDefault())?.contains(labName.lowercase(Locale.getDefault())) == true)
                     filteredAnalyticsList.add(analytic)

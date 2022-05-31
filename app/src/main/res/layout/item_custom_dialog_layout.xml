@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:padding="@dimen/_4sdp">
 
-
     <View
         android:id="@+id/viewSupporter"
         android:layout_width="match_parent"

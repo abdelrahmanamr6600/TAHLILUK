@@ -289,10 +289,10 @@ class FirestoreClass {
     fun listenAvailabilityOfReceiver(
         activity: ChatActivity,
         collectionName: String,
-        receiverLab: Lab
+        labId: String
     ) {
         mFireStore.collection(collectionName).document(
-            receiverLab.id!!
+            labId
         ).addSnapshotListener(
             activity
         ) { value, error ->
@@ -477,12 +477,12 @@ class FirestoreClass {
     }
 
 
-    fun getLabs(fragment: Fragment){
+    fun getLabs(fragment: Fragment) {
         //getLabsList FromFireStore
         mFireStore.collection(Constants.Key_COLLECTION_LABS)
             .get().addOnSuccessListener { document ->
-                val labsList:ArrayList<Lab> =ArrayList()
-                for (labObject in document.documents){
+                val labsList: ArrayList<Lab> = ArrayList()
+                for (labObject in document.documents) {
                     //convert every documents to object that type lab and pass it to List
                     val lab = labObject.toObject(Lab::class.java)
                     if (lab != null) {
@@ -491,21 +491,22 @@ class FirestoreClass {
                     }
                 }
 
-                when(fragment){
-                    is ReserveLabsFragment ->{
+                when (fragment) {
+                    is ReserveLabsFragment -> {
                         fragment.successLabFromFireStore(labsList)
                     }
                 }
             }
             .addOnFailureListener {
-                when(fragment){
-                    is ReserveLabsFragment ->{
+                when (fragment) {
+                    is ReserveLabsFragment -> {
                         fragment.closeProgressBar()
                     }
                 }
             }
     }
-    fun addReserve(fragment :ConfirmReserveFragment, reserve:Reserve,collectionName:String){
+
+    fun addReserve(fragment: ConfirmReserveFragment, reserve: Reserve, collectionName: String) {
         mFireStore.collection(collectionName)
             .document()
             .set(reserve, SetOptions.merge())
@@ -513,35 +514,39 @@ class FirestoreClass {
                 fragment.addReserve()
             }
             .addOnFailureListener {
-                Toast.makeText(fragment.context,"Error",Toast.LENGTH_LONG).show()
+                Toast.makeText(fragment.context, "Error", Toast.LENGTH_LONG).show()
             }
     }
 
 
-    fun getReservations(fragment:PatientReservationsFragment, collectionName:String, userId:String ){
+    fun getReservations(
+        fragment: PatientReservationsFragment,
+        collectionName: String,
+        userId: String
+    ) {
 
         mFireStore.collection(collectionName)
-            .whereEqualTo(Constants.KEY_PATIENT_ID,userId)
+            .whereEqualTo(Constants.KEY_PATIENT_ID, userId)
             .get()
             .addOnSuccessListener {
-              val reservationsList :ArrayList<Reserve> = ArrayList()
-                for (reserve in it.documents){
+                val reservationsList: ArrayList<Reserve> = ArrayList()
+                for (reserve in it.documents) {
                     val reservation = reserve.toObject(Reserve::class.java)
                     reservation!!.orderId = reserve.id
                     reservationsList.add(reservation)
                 }
 
-                Log.d("size",reservationsList.size.toString())
+                Log.d("size", reservationsList.size.toString())
 
                 fragment.successReservationsFromFireStore(reservationsList)
             }
             .addOnFailureListener {
-              Toast.makeText(fragment.requireContext(),"error",Toast.LENGTH_LONG).show()
+                Toast.makeText(fragment.requireContext(), "error", Toast.LENGTH_LONG).show()
             }
     }
 
 
-    fun deleteReservation(fragment: ReservationDetailsFragment,reserveId:String){
+    fun deleteReservation(fragment: ReservationDetailsFragment, reserveId: String) {
         mFireStore.collection(Constants.KEY_COLLECTION_RESERVATION)
             .document(reserveId)
             .delete().addOnSuccessListener {
@@ -549,34 +554,34 @@ class FirestoreClass {
 
             }
             .addOnFailureListener {
-                Toast.makeText(fragment.requireContext().applicationContext,"Error",Toast
-                    .LENGTH_LONG).show()
+                Toast.makeText(
+                    fragment.requireContext().applicationContext, "Error", Toast
+                        .LENGTH_LONG
+                ).show()
             }
     }
 
-    fun getLabImage(fragment: PatientReservationsFragment,labId:String){
+    fun getLabImage(fragment: PatientReservationsFragment, labId: String) {
         mFireStore.collection(Constants.Key_COLLECTION_LABS)
             .document(labId)
             .get()
             .addOnSuccessListener {
-                 var image = it.get("image")
-                var labName = it.get("name")
-                fragment.setLabImage(image as String,labName as String)
+                var image = it.get("image")
+                var labName = it.get("labName")
+                fragment.setLabImage(image as String, labName as String)
 
             }
 
     }
 
 
-
-
-    fun getReady(fragment:GetReadyListFragment, collectionName:String ){
+    fun getReady(fragment: GetReadyListFragment, collectionName: String) {
 
         mFireStore.collection(collectionName)
             .get()
             .addOnSuccessListener {
-                val getReadyList :ArrayList<GetReady> = ArrayList()
-                for (item in it.documents){
+                val getReadyList: ArrayList<GetReady> = ArrayList()
+                for (item in it.documents) {
                     val item = item.toObject(GetReady::class.java)
 
                     getReadyList.add(item!!)
@@ -585,18 +590,17 @@ class FirestoreClass {
                 fragment.successGetReadyListFromFireStore(getReadyList)
             }
             .addOnFailureListener {
-                Toast.makeText(fragment.requireContext(),"error",Toast.LENGTH_LONG).show()
+                Toast.makeText(fragment.requireContext(), "error", Toast.LENGTH_LONG).show()
             }
     }
 
 
-    fun getCheckups(fragment:CheckupsListFragment, collectionName:String ){
-
+    fun getCheckups(fragment: CheckupsListFragment, collectionName: String) {
         mFireStore.collection(collectionName)
             .get()
             .addOnSuccessListener {
-                val checkupsList :ArrayList<Checkups> = ArrayList()
-                for (item in it.documents){
+                val checkupsList: ArrayList<Checkups> = ArrayList()
+                for (item in it.documents) {
                     val item = item.toObject(Checkups::class.java)
 
                     checkupsList.add(item!!)
@@ -605,7 +609,7 @@ class FirestoreClass {
                 fragment.successCheckupsListFromFireStore(checkupsList)
             }
             .addOnFailureListener {
-                Toast.makeText(fragment.requireContext(),"error",Toast.LENGTH_LONG).show()
+                Toast.makeText(fragment.requireContext(), "error", Toast.LENGTH_LONG).show()
             }
     }
 

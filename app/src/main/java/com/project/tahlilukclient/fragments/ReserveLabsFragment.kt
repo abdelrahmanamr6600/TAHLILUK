@@ -92,7 +92,7 @@ class ReserveLabsFragment : Fragment(),LabListener {
         filteredLabList = ArrayList()
         for(lab in labsList){
             if (labName != null) {
-                if (lab.name?.lowercase(Locale.getDefault())?.contains(labName.lowercase(Locale.getDefault())) == true)
+                if (lab.labName?.lowercase(Locale.getDefault())?.contains(labName.lowercase(Locale.getDefault())) == true)
                     filteredLabList.add(lab)
             }
         }

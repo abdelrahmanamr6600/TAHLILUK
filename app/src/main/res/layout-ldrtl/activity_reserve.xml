@@ -29,7 +29,7 @@
         android:layout_marginStart="@dimen/_12sdp"
         android:layout_marginTop="@dimen/_3sdp"
         android:fontFamily="@font/ntailub"
-        android:shadowColor="@color/black"
+        android:shadowColor="@color/black_text"
         android:shadowDx="3"
         android:shadowDy="3"
         android:shadowRadius="2"
@@ -45,11 +45,11 @@
     <View
         android:id="@+id/viewSupporter"
         android:layout_width="wrap_content"
-        android:layout_marginTop="@dimen/_15sdp"
         android:layout_height="@dimen/_1sdp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_15sdp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageBack"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageBack" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -57,19 +57,19 @@
         android:background="@drawable/background_content_bottom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/viewSupporter">
+
         <com.anton46.stepsview.StepsView
             android:id="@+id/step_view"
-            android:layout_marginTop="@dimen/_10sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:layout_marginTop="@dimen/_10sdp" />
+
         <androidx.fragment.app.FragmentContainerView
-            android:layout_marginTop="@dimen/_90sdp"
             android:id="@+id/fragment_container"
+            android:name="com.project.tahlilukclient.fragments.ReserveLabsFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:name="com.project.tahlilukclient.fragments.ReserveLabsFragment"
-            />
+            android:layout_marginTop="@dimen/_90sdp" />
 
     </FrameLayout>
 

@@ -7,7 +7,6 @@
     android:background="@drawable/rounded_dialog"
     tools:context=".fragments.ChangePhoneFragment">
 
-
     <LinearLayout
         android:id="@+id/change_number"
         android:layout_width="match_parent"
@@ -23,8 +22,8 @@
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_20ssp"
             android:fontFamily="@font/ntailub"
-            android:textColor="@color/primary_text"
             android:text="@string/change_phone"
+            android:textColor="@color/primary_text"
             android:textSize="@dimen/_15ssp" />
 
         <EditText
@@ -53,16 +52,16 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_changePhone"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_55sdp"
-            android:layout_marginStart="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginStart="@dimen/_55sdp"
             android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_45sdp"
+            android:layout_marginEnd="@dimen/_55sdp"
             android:background="@drawable/button_sheet_button"
             android:fontFamily="@font/ntailub"
             android:text="@string/change"
             android:textAllCaps="true"
             android:textColor="@color/white"
-            android:textSize="@dimen/_20ssp"
+            android:textSize="@dimen/_15ssp"
             android:textStyle="bold"
             android:visibility="visible"
             app:cornerRadius="@dimen/_25sdp" />
@@ -149,16 +148,16 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_verifyNewPhoneNumber"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_55sdp"
-            android:layout_marginStart="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginStart="@dimen/_55sdp"
             android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_45sdp"
+            android:layout_marginEnd="@dimen/_55sdp"
             android:background="@drawable/button_sheet_button"
             android:fontFamily="@font/ntailub"
             android:text="@string/verify"
             android:textAllCaps="true"
             android:textColor="@color/white"
-            android:textSize="@dimen/_20ssp"
+            android:textSize="@dimen/_15ssp"
             android:textStyle="bold"
             app:cornerRadius="@dimen/_25sdp" />
 
@@ -168,8 +167,6 @@
             android:layout_height="@dimen/_25sdp"
             android:layout_gravity="center"
             android:visibility="invisible" />
-
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

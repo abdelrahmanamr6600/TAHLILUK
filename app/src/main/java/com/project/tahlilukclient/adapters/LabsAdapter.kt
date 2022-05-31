@@ -26,7 +26,7 @@ class LabsAdapter :
     inner class LabViewHolder(var binding: ItemContainerLabBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun setLabData(lab: Lab) {
-            binding.textLabName.text = lab.name
+            binding.textLabName.text = lab.labName
             binding.textLabAddress.text = lab.address
             binding.imageProfile.setImageBitmap(getLabImage(lab.image!!))
             binding.root.setOnClickListener {

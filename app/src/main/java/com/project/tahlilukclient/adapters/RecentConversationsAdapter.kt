@@ -28,7 +28,7 @@ class RecentConversationsAdapter(
             binding.root.setOnClickListener {
                 val lab = Lab()
                 lab.id = chatMessage.conversionId
-                lab.name = chatMessage.conversionName
+                lab.labName = chatMessage.conversionName
                 lab.image = chatMessage.conversionImage
                 conversionListener.onConversionClicked(lab)
             }

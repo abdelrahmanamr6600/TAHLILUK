@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<set xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="ExtraText">
-    <alpha android:fromAlpha="0"
-        android:toAlpha="1"
-        android:duration="600"/>
+    <alpha
+        android:duration="600"
+        android:fromAlpha="0"
+        android:toAlpha="1" />
     <scale
+        android:duration="300"
         android:fromXScale="-3"
         android:fromYScale="-3"
         android:toXScale="1"
-        android:toYScale="1"
-        android:duration="300" />
-
-
+        android:toYScale="1" />
 </set>

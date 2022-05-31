@@ -4,12 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.project.tahlilukclient.databinding.ItemContainerAnalysesBinding
+import com.project.tahlilukclient.databinding.ItemContainerAnalysisBinding
 import com.project.tahlilukclient.models.Analytics
 class ConfirmAnalyticsAdapter(private var analytics: ArrayList<Analytics>) :
     RecyclerView.Adapter<ConfirmAnalyticsAdapter.AnalyticsViewHolder>() {
 
-    inner class AnalyticsViewHolder(var binding: ItemContainerAnalysesBinding) :
+    inner class AnalyticsViewHolder(var binding: ItemContainerAnalysisBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun setAnalyticData(analyses: Analytics) {
             binding.textAnalysisName.text = analyses.analysis_name
@@ -21,7 +21,7 @@ class ConfirmAnalyticsAdapter(private var analytics: ArrayList<Analytics>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnalyticsViewHolder {
         val binding =
-            ItemContainerAnalysesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemContainerAnalysisBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return AnalyticsViewHolder(binding)
     }
 

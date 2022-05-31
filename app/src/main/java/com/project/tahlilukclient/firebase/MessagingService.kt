@@ -24,9 +24,9 @@ class MessagingService : FirebaseMessagingService() {
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         super.onMessageReceived(remoteMessage)
         val lab = Lab()
-        lab.id = remoteMessage.data.get(Constants.KEY_PATIENT_ID)
-        lab.name = remoteMessage.data.get(Constants.KEY_NAME)
-        lab.token = remoteMessage.data.get(Constants.KEY_FCM_TOKEN)
+        lab.id = remoteMessage.data["id"].toString()
+        lab.labName = remoteMessage.data["name"].toString()
+        lab.fcmToken = remoteMessage.data["fcmToken"].toString()
 
         val notificationId: Int = Random().nextInt()
         val channelId = "chat_message"
@@ -38,7 +38,7 @@ class MessagingService : FirebaseMessagingService() {
 
         val builder = NotificationCompat.Builder(this, channelId)
         builder.setSmallIcon(R.drawable.ic_notification)
-        builder.setContentTitle(lab.name)
+        builder.setContentTitle(lab.labName)
         builder.setContentText(remoteMessage.data[Constants.KEY_MESSAGE])
         builder.setStyle(
             NotificationCompat.BigTextStyle().bigText(

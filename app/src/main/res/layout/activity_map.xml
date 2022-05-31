@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".activities.MapActivity">
 
-
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
@@ -15,8 +14,7 @@
         map:layout_constraintBottom_toBottomOf="parent"
         map:layout_constraintEnd_toEndOf="parent"
         map:layout_constraintStart_toStartOf="parent"
-        map:layout_constraintTop_toTopOf="parent"
-       />
+        map:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
         android:id="@+id/rg"
@@ -43,8 +41,7 @@
             android:gravity="center"
             android:text="@string/list"
             android:textColor="@color/black"
-
-            tools:ignore="TouchTargetSizeCheck" />
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/rb_map"
@@ -58,8 +55,8 @@
             android:button="@null"
             android:gravity="center"
             android:text="@string/map"
-            android:textColor="@color/black"
-            tools:ignore="TouchTargetSizeCheck">
+            android:textColor="@color/white"
+            android:textStyle="bold">
 
         </RadioButton>
 

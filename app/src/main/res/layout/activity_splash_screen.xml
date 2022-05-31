@@ -48,7 +48,7 @@
             android:layout_marginTop="@dimen/_20sdp"
             android:fontFamily="@font/ntailub"
             android:gravity="center"
-            android:shadowColor="@color/white"
+            android:shadowColor="@color/white_splash"
             android:shadowDx="1"
             android:shadowRadius="5"
             android:text="@string/SplashScreen_AppDesc"

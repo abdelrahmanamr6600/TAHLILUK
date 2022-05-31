@@ -22,6 +22,4 @@
         android:orientation="vertical"
         android:overScrollMode="never"
         android:visibility="gone"/>
-
-
 </FrameLayout>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="@drawable/background_content_bottom"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_content_bottom"
     tools:context=".fragments.ReservationDetailsFragment">
+
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
@@ -16,7 +17,7 @@ android:background="@drawable/background_content_bottom"
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/orderDetails_section"
@@ -30,8 +31,8 @@ android:background="@drawable/background_content_bottom"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_30ssp"
-                    app:cardCornerRadius="@dimen/_10sdp"
                     android:backgroundTint="@color/container_background"
+                    app:cardCornerRadius="@dimen/_10sdp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -66,7 +67,7 @@ android:background="@drawable/background_content_bottom"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/labName"
-                            android:textColor="@color/black_text"
+                            android:textColor="@color/black"
                             android:textSize="@dimen/_12sdp" />
 
                         <TextView
@@ -75,7 +76,7 @@ android:background="@drawable/background_content_bottom"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_7sdp"
                             android:text="@string/labName"
-                            android:textColor="@color/black_text"
+                            android:textColor="@color/black"
                             android:textSize="@dimen/_12sdp" />
 
 
@@ -94,7 +95,7 @@ android:background="@drawable/background_content_bottom"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/order_date"
-                            android:textColor="@color/black_text"
+                            android:textColor="@color/black"
                             android:textSize="@dimen/_12sdp" />
 
                         <TextView
@@ -103,7 +104,7 @@ android:background="@drawable/background_content_bottom"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_7sdp"
                             android:text="@string/order_date"
-                            android:textColor="@color/black_text"
+                            android:textColor="@color/black"
                             android:textSize="@dimen/_12sdp" />
 
 
@@ -123,7 +124,7 @@ android:background="@drawable/background_content_bottom"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/order_state"
-                            android:textColor="@color/black_text"
+                            android:textColor="@color/black"
                             android:textSize="@dimen/_12sdp" />
 
                         <TextView
@@ -132,7 +133,7 @@ android:background="@drawable/background_content_bottom"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_7sdp"
                             android:text="@string/order_state"
-                            android:textColor="@color/black_text"
+                            android:textColor="@color/black"
                             android:textSize="@dimen/_12sdp" />
 
 
@@ -152,8 +153,8 @@ android:background="@drawable/background_content_bottom"
                 android:layout_gravity="center|top"
                 android:background="@drawable/background_image"
                 android:scaleType="centerCrop"
-                app:riv_oval="true"
-                android:src="@drawable/ic_chat" />
+                android:src="@drawable/ic_chat"
+                app:riv_oval="true" />
 
 
             <androidx.cardview.widget.CardView
@@ -228,7 +229,7 @@ android:background="@drawable/background_content_bottom"
                     android:layout_marginEnd="@dimen/_16sdp"
                     android:layout_marginBottom="@dimen/_16sdp"
                     android:maxLines="2"
-                    android:textColor="@color/black_text"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/_12ssp" />
 
 
@@ -238,7 +239,7 @@ android:background="@drawable/background_content_bottom"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/rv_cart_list_items"
                     android:layout_marginStart="@dimen/_16sdp"
-                    android:layout_marginTop="@dimen/_50sdp"
+                    android:layout_marginTop="@dimen/_55sdp"
                     android:layout_marginEnd="@dimen/_16sdp"
                     android:fontFamily="@font/ntailub"
                     android:paddingTop="@dimen/_2sdp"
@@ -254,31 +255,20 @@ android:background="@drawable/background_content_bottom"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_16sdp"
-                    android:layout_marginTop="@dimen/_68sdp"
+                    android:layout_marginTop="@dimen/_72sdp"
                     android:layout_marginEnd="@dimen/_16sdp"
-                    android:textColor="@color/black_text"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/_12ssp" />
 
             </androidx.cardview.widget.CardView>
-
-
-
-
-
-
-
-
-
-
-
 
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/receipt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/container_background"
                 android:layout_below="@id/Cv_selectedAddress"
+                android:backgroundTint="@color/container_background"
                 app:cardCornerRadius="@dimen/_10sdp">
 
                 <LinearLayout
@@ -313,16 +303,15 @@ android:background="@drawable/background_content_bottom"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/Tv_Analytics"
-                            android:textColor="@color/black_text"
+                            android:textColor="@color/black"
                             android:textSize="@dimen/_14ssp" />
 
                         <TextView
                             android:id="@+id/tv_checkout_sub_total"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:textAlignment="center"
-                            android:textColor="@color/black_text"
+                            android:textColor="@color/black"
                             android:textSize="@dimen/_14ssp" />
                     </LinearLayout>
 
@@ -336,16 +325,15 @@ android:background="@drawable/background_content_bottom"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/Visiting_expenses"
-                            android:textColor="@color/black_text"
+                            android:textColor="@color/black"
                             android:textSize="@dimen/_14ssp" />
 
                         <TextView
                             android:id="@+id/tv_checkout_shipping_charge"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:textAlignment="center"
-                            android:textColor="@color/black_text"
+                            android:textColor="@color/black"
                             android:textSize="@dimen/_14ssp" />
                     </LinearLayout>
 
@@ -360,7 +348,7 @@ android:background="@drawable/background_content_bottom"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/lbl_total_amount"
-                            android:textColor="@color/black_text"
+                            android:textColor="@color/black"
                             android:textSize="@dimen/_14ssp" />
 
                         <TextView
@@ -368,7 +356,7 @@ android:background="@drawable/background_content_bottom"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAlignment="center"
-                            android:textColor="@color/black_text"
+                            android:textColor="@color/black"
                             android:textSize="@dimen/_14ssp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -438,11 +426,10 @@ android:background="@drawable/background_content_bottom"
                 android:text="@string/cancel_request"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_15sdp" />
+                android:textSize="@dimen/_12sdp" />
         </RelativeLayout>
 
     </ScrollView>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

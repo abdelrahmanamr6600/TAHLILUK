@@ -134,14 +134,14 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSignIn"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_55sdp"
-                android:layout_marginStart="@dimen/_45sdp"
-                android:layout_marginEnd="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginStart="@dimen/_55sdp"
+                android:layout_marginEnd="@dimen/_55sdp"
                 android:fontFamily="@font/ntailub"
                 android:text="@string/sign_in"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_20ssp"
+                android:textSize="@dimen/_15ssp"
                 android:textStyle="bold"
                 app:cornerRadius="@dimen/_25sdp" />
 

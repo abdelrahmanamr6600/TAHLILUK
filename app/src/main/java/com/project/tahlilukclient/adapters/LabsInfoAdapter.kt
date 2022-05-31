@@ -25,7 +25,6 @@ import com.google.android.gms.location.*
 import com.project.tahlilukclient.databinding.ItemContainerLabCardBinding
 
 
-
 class LabsInfoAdapter(
     var activity: LabsActivity,
     private var labs: ArrayList<Lab>,
@@ -69,7 +68,7 @@ class LabsInfoAdapter(
     inner class LabViewHolder(var binding: ItemContainerLabCardBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun setLabData(lab: Lab) {
-            binding.textLabName.text = lab.name
+            binding.textLabName.text = lab.labName
             binding.textLabAddress.text = lab.address
             binding.ivLabProfile.setImageBitmap(getLabImage(lab.image!!))
             binding.ivOpenChat.setOnClickListener {
@@ -130,7 +129,7 @@ class LabsInfoAdapter(
 
     private fun goToMap(lab: Lab) {
         val uri =
-            Uri.parse("https://www.google.co.in/maps/dir/${currentLatLong!!.latitude},${currentLatLong!!.longitude}/${lab.labLatitude},${lab.labLongitude}")
+            Uri.parse("https://www.google.co.in/maps/dir/${currentLatLong!!.latitude},${currentLatLong!!.longitude}/${lab.latitude},${lab.longitude}")
         val dirIntent = Intent(Intent.ACTION_VIEW, uri)
         dirIntent.setPackage("com.google.android.apps.maps")
         dirIntent.resolveActivity(activity.packageManager).let {
@@ -191,7 +190,7 @@ class LabsInfoAdapter(
                         activity.count.plus(1)
                     } else {
                         SupportFunctions.showSwitcher(true, activity.activityLabsBinding.rg)
-                        SupportFunctions.showDialog(activity,true)
+                        SupportFunctions.showDialog(activity, true)
                         0
                     }
                 } catch (ex: Exception) {

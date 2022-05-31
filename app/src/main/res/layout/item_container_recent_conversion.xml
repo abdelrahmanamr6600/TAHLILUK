@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5sdp"
     android:clickable="true"
     android:clipToPadding="true"
     android:focusable="true"
-    android:layout_margin="@dimen/_5sdp"
     android:foreground="?android:attr/selectableItemBackground"
     app:cardBackgroundColor="@android:color/transparent"
     app:cardCornerRadius="@dimen/_10sdp"
@@ -42,8 +42,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_8sdp"
             android:layout_marginEnd="@dimen/_8sdp"
-            android:fontFamily="@font/ntailub"
             android:ellipsize="end"
+            android:fontFamily="@font/ntailub"
             android:maxLines="1"
             android:textColor="@color/primary_text"
             android:textSize="@dimen/_13ssp"
@@ -64,7 +64,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/imageProfile"
             app:layout_constraintTop_toBottomOf="@id/viewSupporter" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

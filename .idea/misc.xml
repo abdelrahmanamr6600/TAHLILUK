@@ -128,6 +128,8 @@
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/drawable-ldrtl/background_oval_shape_left.xml" value="0.43846153846153846" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/drawable-ldrtl/background_oval_shape_right.xml" value="0.4453125" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/drawable-ldrtl/drawable.xml" value="0.4453125" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/drawable-ldrtl/toggle_background_list.xml" value="0.34629629629629627" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/drawable-ldrtl/toggle_background_map.xml" value="0.34629629629629627" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/drawable-xxhdpi/ic_settings_bottom_nav.xml" value="0.4453125" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/drawable/background.xml" value="0.43846153846153846" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/drawable/background_chat_input.xml" value="0.21574074074074073" />
@@ -161,37 +163,65 @@
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/drawable/item_container_lab.xml" value="0.24444444444444444" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/drawable/pink_out_line.xml" value="0.43846153846153846" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/drawable/rounded_dialog.xml" value="0.31666666666666665" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/drawable/toggle_background_list.xml" value="0.34629629629629627" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/drawable/toggle_background_map.xml" value="0.34629629629629627" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/drawable/toggle_background_out_line.xml" value="0.34629629629629627" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/drawable/toggle_pause_anim.xml" value="0.43846153846153846" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/drawable/toggle_play_pause_anim.xml" value="0.43846153846153846" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/drawable/toggle_play_pause_bg.xml" value="0.43846153846153846" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/drawable/toggle_widget_background.xml" value="0.43846153846153846" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/drawable/toggle_widget_background_map.xml" value="0.43846153846153846" />
-        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_chat.xml" value="0.26180555555555557" />
-        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_forgot_password.xml" value="0.2847222222222222" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout-ldrtl/activity_reserve.xml" value="0.42916666666666664" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_chat.xml" value="0.25" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_checkups.xml" value="0.3037037037037037" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_forgot_password.xml" value="0.25" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_get_ready.xml" value="0.22361111111111112" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_labs.xml" value="0.2951388888888889" />
-        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_labs_chat.xml" value="0.42916666666666664" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_labs_chat.xml" value="0.3037037037037037" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_main.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_main_chat.xml" value="0.2847222222222222" />
-        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_reserve.xml" value="0.39814814814814814" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_map.xml" value="0.3037037037037037" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_reservations.xml" value="0.3037037037037037" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_reserve.xml" value="0.3037037037037037" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_reset_password.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_reverse_request.xml" value="0.42916666666666664" />
-        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_sign_in.xml" value="0.2847222222222222" />
-        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_sign_up.xml" value="0.2847222222222222" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_sign_in.xml" value="0.3037037037037037" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_sign_up.xml" value="0.3037037037037037" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_splash_screen.xml" value="0.2847222222222222" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/activity_verify_phone_number.xml" value="0.2847222222222222" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/background_profile_image_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/dialog_progress.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_analytics_request_reserve.xml" value="0.29814814814814816" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_base.xml" value="0.17314814814814813" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_change_password.xml" value="0.32592592592592595" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_change_phone.xml" value="0.2847222222222222" />
-        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_home.xml" value="0.22430555555555556" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_checkups_details.xml" value="0.29814814814814816" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_checkups_list.xml" value="0.22361111111111112" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_confirm_reserve.xml" value="0.29814814814814816" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_finish_reservation.xml" value="0.29814814814814816" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_get_ready_details.xml" value="0.22361111111111112" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_get_ready_list.xml" value="0.29814814814814816" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_maps.xml" value="0.29814814814814816" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_marker.xml" value="0.35213675213675216" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_patient_reservations.xml" value="0.25" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_profile.xml" value="0.2951388888888889" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_reservation_details.xml" value="0.22361111111111112" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_reserve_address.xml" value="0.22361111111111112" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_reserve_labs.xml" value="0.22361111111111112" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_results.xml" value="0.22361111111111112" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/fragment_settings.xml" value="0.2755852842809365" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/item_container_analyses.xml" value="0.2710526315789474" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/item_container_analysis.xml" value="0.22361111111111112" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/item_container_checkups.xml" value="0.22361111111111112" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/item_container_getready.xml" value="0.2710526315789474" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/item_container_lab.xml" value="0.20185185185185187" />
-        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/item_container_lab_card.xml" value="0.39814814814814814" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/item_container_lab_card.xml" value="0.22361111111111112" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/item_container_received_message.xml" value="0.17314814814814813" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/item_container_recent_conversion.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/item_container_reservations.xml" value="0.2710526315789474" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/item_container_reserve_lab.xml" value="0.33" />
+        <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/item_container_result.xml" value="0.2710526315789474" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/item_container_sent_conversion.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/item_container_sent_message.xml" value="0.17314814814814813" />
         <entry key="..\:/Users/Amr/Desktop/Tahliluk-Client/app/src/main/res/layout/item_custom_dialog_layout.xml" value="0.2755852842809365" />
