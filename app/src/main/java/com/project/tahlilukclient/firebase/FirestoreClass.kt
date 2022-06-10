@@ -566,8 +566,8 @@ class FirestoreClass {
             .document(labId)
             .get()
             .addOnSuccessListener {
-                var image = it.get("image")
-                var labName = it.get("labName")
+                val image = it.get("image")
+                val labName = it.get("labName")
                 fragment.setLabImage(image as String, labName as String)
 
             }
@@ -583,7 +583,6 @@ class FirestoreClass {
                 val getReadyList: ArrayList<GetReady> = ArrayList()
                 for (item in it.documents) {
                     val item = item.toObject(GetReady::class.java)
-
                     getReadyList.add(item!!)
                 }
 
