@@ -1,7 +1,9 @@
 package com.project.tahlilukclient.fragments
+import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.os.Environment
 import android.util.Base64
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,20 +14,26 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.downloader.OnDownloadListener
+import com.downloader.PRDownloader
 import com.project.tahlilukclient.R
 import com.project.tahlilukclient.adapters.ConfirmAnalyticsAdapter
+import com.project.tahlilukclient.databinding.DialogProgressBinding
 import com.project.tahlilukclient.databinding.FragmentReservationDetailsBinding
 import com.project.tahlilukclient.firebase.FirestoreClass
 import com.project.tahlilukclient.models.Reserve
 import com.project.tahlilukclient.utilities.Constants
+import com.project.tahlilukclient.utilities.SupportFunctions
+import java.io.File
 
 class ReservationDetailsFragment : Fragment() {
     private lateinit var reservationDetailsBinding: FragmentReservationDetailsBinding
     private lateinit var bundle: Bundle
     private lateinit var reservation:Reserve
-    lateinit var adapter: ConfirmAnalyticsAdapter
-    lateinit var image:String
-    lateinit var labName:String
+    private  lateinit var adapter: ConfirmAnalyticsAdapter
+    private lateinit var image:String
+    private lateinit var labName:String
+    private lateinit var bindingDialog: DialogProgressBinding
     companion object {
         @JvmStatic
         fun newInstance() =
@@ -46,6 +54,7 @@ class ReservationDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         reservationDetailsBinding = FragmentReservationDetailsBinding.inflate(layoutInflater)
+        bindingDialog = DialogProgressBinding.inflate(layoutInflater)
         setReservationData()
         setListeners()
         return reservationDetailsBinding.root
@@ -68,12 +77,15 @@ class ReservationDetailsFragment : Fragment() {
         adapter = ConfirmAnalyticsAdapter(reservation.analyticsList!!)
         reservationDetailsBinding.rvCartListItems.layoutManager = LinearLayoutManager(requireContext())
         reservationDetailsBinding.rvCartListItems.adapter = adapter
-        if (reservation.resultsList== null){
+        if (reservation.orderState==getString(R.string.pending)||reservation.orderState==getString(R.string.pending)){
             reservationDetailsBinding.CvResult.visibility =View.GONE
         }
         else
         {
+            reservationDetailsBinding.btnCancelRequest.visibility = View.GONE
             reservationDetailsBinding.CvResult.visibility =View.VISIBLE
+
+
         }
     }
 private fun setListeners(){
@@ -83,24 +95,75 @@ private fun setListeners(){
     }
 
     reservationDetailsBinding.btnShowResult.setOnClickListener {
-        val resultFragment  = ResultsFragment.newInstance()
-        val bundle = Bundle()
-        bundle.putString(Constants.IMAGE,image)
-        bundle.putSerializable(Constants.ANALYTICS_RESULT,reservation.resultsList)
-        resultFragment.arguments = bundle
-        val fragmentManager: FragmentManager =
-            (reservationDetailsBinding.root.context as FragmentActivity).supportFragmentManager
-        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.setCustomAnimations(R.anim.fui_slide_in_right,R.anim.fragmentanimation,R.anim.fui_slide_in_right,R.anim.fragmentanimation)
-        fragmentTransaction.replace(R.id.fragment_container, resultFragment)
-        fragmentTransaction.addToBackStack(null)
-        fragmentTransaction.commit()
+        SupportFunctions.showProgressBar(
+            requireContext(),
+            resources.getString(R.string.please_wait),
+            bindingDialog.tvProgressText
+        )
+        val url = reservation.results!!
+        val fileName = reservation.orderDateTime!!
+        downloadPdfFromInternet(
+            url,
+            getRootDirPath(requireContext()),
+            fileName
+        )
     }
 
 }
     private fun getLabImage(encodedImage: String): Bitmap {
         val bytes: ByteArray = Base64.decode(encodedImage, Base64.DEFAULT)
         return BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+    }
+
+
+
+    private fun downloadPdfFromInternet(url: String, dirPath: String, fileName: String) {
+        PRDownloader.initialize(requireContext())
+        PRDownloader.download(
+            url,
+            dirPath,
+            fileName
+        ).build()
+            .start(object : OnDownloadListener {
+                override fun onDownloadComplete() {
+                    SupportFunctions.hideDialog()
+                    val downloadedFile = File(dirPath, fileName)
+                    val imageResultFragment = ResultFragment.newInstance(downloadedFile)
+                    val bundle = Bundle()
+                    bundle.putString(Constants.RESULT_IMAGE, image)
+                    bundle.putString(Constants.LAB_NAME,labName)
+                    imageResultFragment.arguments = bundle
+                    val fragmentManager: FragmentManager =
+                        (reservationDetailsBinding.root.context as FragmentActivity).supportFragmentManager
+                    val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+                    fragmentTransaction.setCustomAnimations(
+                        R.anim.fui_slide_in_right,
+                        R.anim.fragmentanimation,
+                        R.anim.fui_slide_in_right,
+                        R.anim.fragmentanimation
+                    )
+                    fragmentTransaction.replace(R.id.fragment_container, imageResultFragment)
+                    fragmentTransaction.addToBackStack(null)
+                    fragmentTransaction.commit()
+                }
+
+                override fun onError(error: com.downloader.Error?) {
+
+                }
+
+            })
+    }
+
+    private fun getRootDirPath(context: Context): String {
+        return if (Environment.MEDIA_MOUNTED == Environment.getExternalStorageState()) {
+            val file: File = ContextCompat.getExternalFilesDirs(
+                context.applicationContext,
+                null
+            )[0]
+            file.absolutePath
+        } else {
+            context.applicationContext.filesDir.absolutePath
+        }
     }
 
 }

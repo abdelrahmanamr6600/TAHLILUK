@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_content_bottom"
+    tools:context=".fragments.ResultFragment">
+    <TextView
+        android:id="@+id/tv_labName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:text="@string/labName"/>
+
+   <com.github.barteksc.pdfviewer.PDFView
+       android:id="@+id/pdf"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_marginTop="@dimen/_30sdp"/>
+</FrameLayout>

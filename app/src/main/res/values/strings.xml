@@ -123,9 +123,11 @@
     <string name="getReady">Get Ready</string>
     <string name="analyses_result">Analysis Result</string>
     <string name="know_result">Show Result</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="amr_medhat_riad">Amr Medhat Riad</string>
+    <string name="amr_sherif_mohamed">Amr Sherif Mohamed</string>
+    <string name="abdallah_said_zakaria">Abdallah Said Zakaria</string>
+    <string name="mohamed_ibrahim_maher">Mohamed Ibrahim Maher</string>
+    <string name="abdelrahman_amr_moustafa">Abdelrahman Amr Moustafa</string>
 
 
 </resources>

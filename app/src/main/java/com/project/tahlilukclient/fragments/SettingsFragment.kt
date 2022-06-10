@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import com.project.tahlilukclient.R
 import com.project.tahlilukclient.activities.SplashScreenActivity
@@ -19,12 +18,12 @@ import com.project.tahlilukclient.utilities.PreferenceManager
 import com.project.tahlilukclient.utilities.SupportFunctions
 
 class SettingsFragment : Fragment() {
-    lateinit var fragmentSettingsBinding: FragmentSettingsBinding
-    lateinit var itemCustomDialogLayoutBinding: ItemCustomDialogLayoutBinding
+    private lateinit var fragmentSettingsBinding: FragmentSettingsBinding
+    private lateinit var itemCustomDialogLayoutBinding: ItemCustomDialogLayoutBinding
     private lateinit var preferenceManager: PreferenceManager
     private lateinit var alert: AlertDialog
-    var englishRadioButtonState: Boolean = false
-    var arabicRadioButtonState: Boolean = false
+    private var englishRadioButtonState: Boolean = false
+    private var arabicRadioButtonState: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,7 +77,7 @@ class SettingsFragment : Fragment() {
         if (alert.window != null) {
             alert.window!!.setBackgroundDrawable(ColorDrawable(0))
         }
-        alert.show();
+        alert.show()
 
     }
 
@@ -132,6 +131,13 @@ class SettingsFragment : Fragment() {
                 startActivity(intent)
             }
         }
+
+        fragmentSettingsBinding.btnAboutUs.setOnClickListener {
+            AboutUsFragment.newInstance()
+                .show(childFragmentManager, AboutUsFragment.TAG)
+
+        }
+
     }
 
     private fun startNightMode() {

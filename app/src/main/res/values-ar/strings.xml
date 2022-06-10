@@ -121,4 +121,11 @@
     <string name="getReady">Get Ready</string>
     <string name="analyses_result">Analysis Result</string>
     <string name="know_result">Show Result</string>
+    <string name="amr_medhat_riad">عمرو مدحت رياض </string>
+    <string name="amr_sherif_mohamed">عمرو شريف محمد</string>
+    <string name="abdallah_said_zakaria">عبدالله سعيد زكريا</string>
+    <string name="mohamed_ibrahim_maher">محمد ابراهيم ماهر</string>
+    <string name="abdelrahman_amr_moustafa">عبدالرحمن عمرو مصطفي </string>
+
+
 </resources>

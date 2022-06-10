@@ -370,6 +370,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/receipt"
                 android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
                 android:backgroundTint="@color/container_background"
                 android:padding="@dimen/_5sdp"
                 android:visibility="gone"

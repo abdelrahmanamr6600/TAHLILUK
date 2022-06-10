@@ -64,6 +64,7 @@ class Constants {
         const val IMAGE = "image"
         const val LAB_NAME ="labName"
         const val ANALYTICS_RESULT = "AnalyticsResult"
+        const val RESULT_IMAGE = "result_image"
 
 
         var remoteMsgHeaders: HashMap<String, String>? = null

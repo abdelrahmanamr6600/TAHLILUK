@@ -38,7 +38,8 @@ class ReservationsAdapter : RecyclerView.Adapter<ReservationsAdapter.Reservation
 
            when(reserve.orderState){
                "pending"  -> binding.tvOrderState.setTextColor(Color. parseColor("#B00020"))
-                "Accepted" -> binding.tvOrderState.setTextColor(Color. parseColor("#284693"))
+               "Accepted" -> binding.tvOrderState.setTextColor(Color. parseColor("#284693"))
+               "completed" -> binding.tvOrderState.setTextColor(Color. parseColor("#284693"))
            }
 
            binding.root.setOnClickListener {

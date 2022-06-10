@@ -11,7 +11,7 @@ class Reserve : Serializable {
     var orderLocation:GeoPoint?=null;
     var orderAddress:String?=null
     var analyticsList:ArrayList<Analytics>?=null
-    var resultsList:ArrayList<AnalysisResult>?=null
+    var results :String?=null
     var orderState:String?=null
     var orderUserPhone:String?=null
     var orderDateTime:String?=null
