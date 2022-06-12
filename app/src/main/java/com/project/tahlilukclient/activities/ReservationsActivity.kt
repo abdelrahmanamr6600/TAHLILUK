@@ -12,7 +12,6 @@ import com.project.tahlilukclient.fragments.PatientReservationsFragment
 
 class ReservationsActivity : AppCompatActivity() {
     lateinit var binding:ActivityReservationsBinding
-    private lateinit var mProgressBar: Dialog
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityReservationsBinding.inflate(LayoutInflater.from(this))

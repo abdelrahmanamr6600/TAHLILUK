@@ -118,8 +118,8 @@
     <string name="cancel_request">Cancel Request</string>
     <string name="labName">Lab name :</string>
     <string name="pending">Pending</string>
-    <string name="inprogress">in Progress</string>
-    <string name="completed">completed</string>
+    <string name="in_progress">In Progress</string>
+    <string name="completed">Completed</string>
     <string name="getReady">Get Ready</string>
     <string name="analyses_result">Analysis Result</string>
     <string name="know_result">Show Result</string>

@@ -116,7 +116,7 @@
     <string name="cancel_request">الغاء الطلب </string>
     <string name="labName">اسم العمل:</string>
     <string name="pending">معلق</string>
-    <string name="inprogress">جاري العمل</string>
+    <string name="in_progress">جاري العمل</string>
     <string name="completed">اكتمل</string>
     <string name="getReady">Get Ready</string>
     <string name="analyses_result">Analysis Result</string>

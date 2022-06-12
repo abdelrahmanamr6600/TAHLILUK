@@ -1,6 +1,5 @@
 package com.project.tahlilukclient.models
 
-import com.google.android.gms.maps.model.LatLng
 import com.google.firebase.firestore.GeoPoint
 import java.io.Serializable
 

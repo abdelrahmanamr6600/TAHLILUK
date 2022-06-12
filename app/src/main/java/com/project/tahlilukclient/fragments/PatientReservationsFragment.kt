@@ -68,7 +68,7 @@ class PatientReservationsFragment : Fragment(), ReservationListener {
             }
             SupportFunctions.loading(false, null, binding.progressBar)
             binding.rvReservations.visibility = View.VISIBLE
-            reservationsAdapter = ReservationsAdapter(reservationsList, this)
+            reservationsAdapter = ReservationsAdapter(this@PatientReservationsFragment,reservationsList, this)
             binding.rvReservations.layoutManager = LinearLayoutManager(this.activity)
 
             binding.rvReservations.adapter = reservationsAdapter
