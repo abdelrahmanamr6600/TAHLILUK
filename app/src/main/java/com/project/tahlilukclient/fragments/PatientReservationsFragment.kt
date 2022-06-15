@@ -70,7 +70,6 @@ class PatientReservationsFragment : Fragment(), ReservationListener {
             binding.rvReservations.visibility = View.VISIBLE
             reservationsAdapter = ReservationsAdapter(this@PatientReservationsFragment,reservationsList, this)
             binding.rvReservations.layoutManager = LinearLayoutManager(this.activity)
-
             binding.rvReservations.adapter = reservationsAdapter
         } else {
             SupportFunctions.loading(false, null, binding.progressBar)
@@ -81,7 +80,6 @@ class PatientReservationsFragment : Fragment(), ReservationListener {
         }
 
     }
-
 
     private fun getReservationsFromFireStore() {
         FirestoreClass().getReservations(this, Constants.KEY_COLLECTION_RESERVATION, patientId)

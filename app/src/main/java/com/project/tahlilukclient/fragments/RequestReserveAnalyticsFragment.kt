@@ -75,8 +75,10 @@ class RequestReserveAnalyticsFragment : Fragment(),AnalyticsListener {
 
         }
         else{
-
+            closeProgressBar()
             binding.TVNoAnalytics.visibility = View.VISIBLE
+            binding.rvAnalytics.visibility = View.GONE
+            binding.btnSaveAnalytics.visibility=View.GONE
         }
 
 
