@@ -4,10 +4,10 @@ import android.annotation.SuppressLint
 import android.location.Address
 import android.location.Geocoder
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -27,7 +27,6 @@ import com.project.tahlilukclient.utilities.PreferenceManager
 import com.project.tahlilukclient.utilities.SupportFunctions
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 class ConfirmReserveFragment : Fragment() {
     private lateinit var confirmReserveBinding: FragmentConfirmReserveBinding
@@ -155,7 +154,8 @@ class ConfirmReserveFragment : Fragment() {
             reserve.orderUserPhone = preferenceManager.getString(Constants.KEY_PHONE_NUMBER)
             reserve.orderAnalyticsPrice = confirmReserveBinding.tvCheckoutSubTotal.text.toString()
             reserve.orderTotalAmount = confirmReserveBinding.tvCheckoutTotalAmount.text.toString()
-            reserve.orderDateTime = getTime()
+            reserve.orderDateTime =
+                SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
             reserve.orderAdditionalInformation = note
             FirestoreClass().addReserve(this, reserve, Constants.KEY_COLLECTION_RESERVATION)
         }
