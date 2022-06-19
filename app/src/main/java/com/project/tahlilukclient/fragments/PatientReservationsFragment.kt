@@ -94,7 +94,7 @@ class PatientReservationsFragment : Fragment(), ReservationListener {
 
         FirestoreClass().getLabImage(this, reserve.labId!!)
         coroutineScope.launch {
-            delay(430)
+            delay(5000)
             val reservationDetailsFragment = ReservationDetailsFragment.newInstance()
             val bundle = Bundle()
             bundle.putSerializable(Constants.Reservation, reserve)

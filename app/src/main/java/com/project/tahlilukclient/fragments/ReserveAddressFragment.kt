@@ -1,5 +1,7 @@
 package com.project.tahlilukclient.fragments
+import android.Manifest
 import android.annotation.SuppressLint
+import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Geocoder
 import android.os.Bundle
@@ -8,6 +10,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -32,43 +37,45 @@ private lateinit var selectedAnalyticsList :ArrayList<Analytics>
 private lateinit var lab: Lab
 
 
+
 class ReserveAddressFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-
-        }
+        reserveAddressFragmentBinding = FragmentReserveAddressBinding.inflate(layoutInflater)
+       checkPermission()
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        reserveAddressFragmentBinding = FragmentReserveAddressBinding.inflate(inflater)
 
-        if(!SupportFunctions.isGpsEnabled(requireActivity()))
-        {
+
+        if (!SupportFunctions.isGpsEnabled(requireActivity())) {
             SupportFunctions.turnOnGps(requireActivity())
         }
 
-        SupportFunctions.getPermission(requireContext())
-        if (statue==0){
+        if (statue == 0) {
             bundle = requireArguments()
             lab = bundle.getSerializable(Constants.SELECTED_LAB) as Lab
-            selectedAnalyticsList = bundle.getSerializable(Constants.SELECTED_ANALYTICS) as ArrayList<Analytics>
-            getCurrentLocation()
-        }
-        else{
+            selectedAnalyticsList =
+                bundle.getSerializable(Constants.SELECTED_ANALYTICS) as ArrayList<Analytics>
+
+        } else {
             getAddress(currentLatLong!!.latitude, currentLatLong!!.longitude)
-            statue =0
+            statue = 0
         }
         setListeners()
+        getCurrentLocation()
 
         return reserveAddressFragmentBinding.root
     }
+
     companion object {
         var currentLatLong: LatLng? = null
-        var statue:Int = 0
+        var statue: Int = 0
+
         @JvmStatic
         fun newInstance(listener: ChangeStepView) =
             ReserveAddressFragment().apply {
@@ -77,9 +84,10 @@ class ReserveAddressFragment : Fragment() {
                 }
             }
     }
+
     @SuppressLint("MissingPermission")
     private fun getCurrentLocation() {
-        SupportFunctions.loading(true,null, reserveAddressFragmentBinding.progressBar)
+        SupportFunctions.loading(true, null, reserveAddressFragmentBinding.progressBar)
         val locationRequest: LocationRequest = LocationRequest.create()
         locationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
         locationRequest.interval = 5000
@@ -100,25 +108,36 @@ class ReserveAddressFragment : Fragment() {
                 }
             }, Looper.getMainLooper())
     }
-    private fun getAddress(latitude:Double,longitude:Double){
-        SupportFunctions.loading(false,null, reserveAddressFragmentBinding.progressBar)
+
+    private fun getAddress(latitude: Double, longitude: Double) {
+        SupportFunctions.loading(false, null, reserveAddressFragmentBinding.progressBar)
         val addresses: List<Address>
         val geocoder = Geocoder(requireContext(), Locale.getDefault())
-        addresses = geocoder.getFromLocation(latitude , longitude, 1) // Here 1 represent max location result to returned, by documents it recommended 1 to 5
-        val address: String = addresses[0].getAddressLine(0) // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
+        addresses = geocoder.getFromLocation(
+            latitude,
+            longitude,
+            1
+        ) // Here 1 represent max location result to returned, by documents it recommended 1 to 5
+        val address: String =
+            addresses[0].getAddressLine(0) // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
         reserveAddressFragmentBinding.tvAddress.text = address
         reserveAddressFragmentBinding.btnSaveAddress.visibility = View.VISIBLE
 
 
     }
 
-    private fun setListeners(){
+    private fun setListeners() {
         reserveAddressFragmentBinding.tvChangeLocation.setOnClickListener {
-            val mapsFragment =MapsFragment()
+            val mapsFragment = MapsFragment()
             val fragmentManager: FragmentManager =
                 (reserveAddressFragmentBinding.root.context as FragmentActivity).supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-            fragmentTransaction.setCustomAnimations(R.anim.fragmentanimation,R.anim.fui_slide_out_left,R.anim.fragmentanimation,R.anim.fui_slide_out_left)
+            fragmentTransaction.setCustomAnimations(
+                R.anim.fragmentanimation,
+                R.anim.fui_slide_out_left,
+                R.anim.fragmentanimation,
+                R.anim.fui_slide_out_left
+            )
             fragmentTransaction.replace(R.id.fragment_container, mapsFragment)
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
@@ -127,22 +146,66 @@ class ReserveAddressFragment : Fragment() {
 
         reserveAddressFragmentBinding.btnSaveAddress.setOnClickListener {
             changeStepView.increaseProgress()
-            val confirmReserveFragment =ConfirmReserveFragment()
+            val confirmReserveFragment = ConfirmReserveFragment()
             val bundle = Bundle()
             bundle.putDouble(Constants.SELECTED_ADDRESS_LATITUDE, currentLatLong!!.latitude)
             bundle.putDouble(Constants.SELECTED_ADDRESS_LONGITUDE, currentLatLong!!.longitude)
-            bundle.putSerializable(Constants.SELECTED_ANALYTICS,selectedAnalyticsList)
+            bundle.putSerializable(Constants.SELECTED_ANALYTICS, selectedAnalyticsList)
             bundle.putSerializable(Constants.SELECTED_LAB, lab)
-            bundle.putString(Constants.RESERVATION_NOTE, reserveAddressFragmentBinding.etNotes.text.toString())
+            bundle.putString(
+                Constants.RESERVATION_NOTE,
+                reserveAddressFragmentBinding.etNotes.text.toString()
+            )
             confirmReserveFragment.arguments = bundle
             val fragmentManager: FragmentManager =
                 (reserveAddressFragmentBinding.root.context as FragmentActivity).supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-            fragmentTransaction.setCustomAnimations(R.anim.fui_slide_in_right,R.anim.fragmentanimation,R.anim.fui_slide_in_right,R.anim.fragmentanimation)
+            fragmentTransaction.setCustomAnimations(
+                R.anim.fui_slide_in_right,
+                R.anim.fragmentanimation,
+                R.anim.fui_slide_in_right,
+                R.anim.fragmentanimation
+            )
             fragmentTransaction.replace(R.id.fragment_container, confirmReserveFragment)
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
     }
+    private fun checkPermission(){
+        val requestPermissionLauncher =
+            registerForActivityResult(
+                ActivityResultContracts.RequestPermission()
+            ) { isGranted: Boolean ->
+                if (isGranted) {
+                    getCurrentLocation()
+                } else {
+//              Toast.makeText(requireContext(),"pleast",Toast.LENGTH_LONG).show()
+                }
+            }
 
+        when {
+            ContextCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) == PackageManager.PERMISSION_GRANTED -> {
+                getCurrentLocation()
+            }
+
+            ContextCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) == PackageManager.PERMISSION_GRANTED -> {
+                getCurrentLocation()
+            }
+
+            else -> {
+                requestPermissionLauncher.launch(
+                    Manifest.permission.ACCESS_COARSE_LOCATION
+                )
+                requestPermissionLauncher.launch(
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                )
+            }
+        }
+    }
 }

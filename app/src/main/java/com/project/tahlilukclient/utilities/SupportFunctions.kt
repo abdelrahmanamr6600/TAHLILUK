@@ -133,32 +133,24 @@ class SupportFunctions : AppCompatActivity() {
             // or greater we need to use the
             // NetworkCapabilities to check what type of
             // network has the internet connection
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
-                // Returns a Network object corresponding to
-                // the currently active default data network.
-                val network = connectivityManager.activeNetwork ?: return false
-                // Representation of the capabilities of an active network.
-                val activeNetwork =
-                    connectivityManager.getNetworkCapabilities(network) ?: return false
-                return when {
-                    // Indicates this network uses a Wi-Fi transport,
-                    // or WiFi has network connectivity
-                    activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+            // Returns a Network object corresponding to
+            // the currently active default data network.
+            val network = connectivityManager.activeNetwork ?: return false
+            // Representation of the capabilities of an active network.
+            val activeNetwork =
+                connectivityManager.getNetworkCapabilities(network) ?: return false
+            return when {
+                // Indicates this network uses a Wi-Fi transport,
+                // or WiFi has network connectivity
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
 
-                    // Indicates this network uses a Cellular transport. or
-                    // Cellular has network connectivity
-                    activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+                // Indicates this network uses a Cellular transport. or
+                // Cellular has network connectivity
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
 
-                    // else return false
-                    else -> false
-                }
-            } else {
-                // if the android version is below M
-                @Suppress("DEPRECATION") val networkInfo =
-                    connectivityManager.activeNetworkInfo ?: return false
-                @Suppress("DEPRECATION")
-                return networkInfo.isConnected
+                // else return false
+                else -> false
             }
         }
 
@@ -183,8 +175,8 @@ class SupportFunctions : AppCompatActivity() {
         }
 
         fun turnOnGps(activity: Activity) {
-            val locationRequest: com.google.android.gms.location.LocationRequest =
-                com.google.android.gms.location.LocationRequest.create()
+            val locationRequest: LocationRequest =
+                LocationRequest.create()
             locationRequest.priority = PRIORITY_HIGH_ACCURACY
             val builder: LocationSettingsRequest.Builder = LocationSettingsRequest.Builder()
                 .addLocationRequest(locationRequest)

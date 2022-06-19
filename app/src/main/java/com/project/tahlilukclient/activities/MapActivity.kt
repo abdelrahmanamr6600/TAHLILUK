@@ -109,8 +109,8 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerC
     }
 
     private fun getCircleBitmap(bitmap: Bitmap): Bitmap? {
-        val width = 120
-        val height = 120
+        val width = 140
+        val height = 140
         val output = Bitmap.createBitmap(
             width,
             height, Bitmap.Config.ARGB_8888
