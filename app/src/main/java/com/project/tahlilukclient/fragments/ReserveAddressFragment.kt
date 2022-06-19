@@ -6,13 +6,14 @@ import android.location.Address
 import android.location.Geocoder
 import android.os.Bundle
 import android.os.Looper
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.result.contract.ActivityResultContracts.RequestPermission
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -29,7 +30,8 @@ import com.project.tahlilukclient.models.Lab
 import com.project.tahlilukclient.utilities.Constants
 import com.project.tahlilukclient.utilities.SupportFunctions
 import java.util.*
-import kotlin.collections.ArrayList
+
+
 private lateinit var reserveAddressFragmentBinding :FragmentReserveAddressBinding
 private lateinit var changeStepView: ChangeStepView
 private lateinit var bundle: Bundle
@@ -44,6 +46,7 @@ class ReserveAddressFragment : Fragment() {
         super.onCreate(savedInstanceState)
         reserveAddressFragmentBinding = FragmentReserveAddressBinding.inflate(layoutInflater)
        checkPermission()
+
     }
 
     override fun onCreateView(
@@ -67,7 +70,7 @@ class ReserveAddressFragment : Fragment() {
             statue = 0
         }
         setListeners()
-        getCurrentLocation()
+
 
         return reserveAddressFragmentBinding.root
     }
@@ -172,40 +175,34 @@ class ReserveAddressFragment : Fragment() {
         }
     }
     private fun checkPermission(){
-        val requestPermissionLauncher =
-            registerForActivityResult(
-                ActivityResultContracts.RequestPermission()
-            ) { isGranted: Boolean ->
-                if (isGranted) {
+        val locationPermissionRequest = registerForActivityResult(
+            ActivityResultContracts.RequestMultiplePermissions()
+        ) { permissions ->
+            when {
+                permissions.getOrDefault(Manifest.permission.ACCESS_FINE_LOCATION, false) -> {
                     getCurrentLocation()
-                } else {
-//              Toast.makeText(requireContext(),"pleast",Toast.LENGTH_LONG).show()
                 }
+                permissions.getOrDefault(Manifest.permission.ACCESS_COARSE_LOCATION, false) -> {
+                    getCurrentLocation()
+                } else -> {
+                // No location access granted.
             }
+            }
+        }
 
-        when {
-            ContextCompat.checkSelfPermission(
+        if ( ContextCompat.checkSelfPermission(
                 requireContext(),
                 Manifest.permission.ACCESS_COARSE_LOCATION
-            ) == PackageManager.PERMISSION_GRANTED -> {
-                getCurrentLocation()
-            }
-
-            ContextCompat.checkSelfPermission(
+            ) == PackageManager.PERMISSION_GRANTED &&ContextCompat.checkSelfPermission(
                 requireContext(),
                 Manifest.permission.ACCESS_FINE_LOCATION
-            ) == PackageManager.PERMISSION_GRANTED -> {
-                getCurrentLocation()
-            }
-
-            else -> {
-                requestPermissionLauncher.launch(
-                    Manifest.permission.ACCESS_COARSE_LOCATION
-                )
-                requestPermissionLauncher.launch(
-                    Manifest.permission.ACCESS_FINE_LOCATION
-                )
-            }
+            ) == PackageManager.PERMISSION_GRANTED){
+            getCurrentLocation()
+        }
+        else{
+            locationPermissionRequest.launch(arrayOf(
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION))
         }
     }
 }
