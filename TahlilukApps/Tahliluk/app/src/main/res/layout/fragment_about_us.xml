@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/_20sdp"
+    android:background="@drawable/rounded_dialog"
+    tools:context=".fragments.AboutUsFragment">
+
+
+    <TextView
+        android:id="@+id/amrmed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ntailub"
+        android:text="@string/amr_medhat_riad" />
+    <TextView
+        android:id="@+id/amrs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ntailub"
+        android:text="@string/amr_sherif_mohamed" />
+    <TextView
+        android:id="@+id/abdallah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ntailub"
+        android:text="@string/abdallah_said_zakaria" />
+    <TextView
+        android:id="@+id/moahmed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ntailub"
+        android:text="@string/mohamed_ibrahim_maher" />
+    <TextView
+        android:id="@+id/abdelrahman"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ntailub"
+        android:text="@string/abdelrahman_amr_moustafa" />
+
+
+
+
+
+
+
+</LinearLayout>
